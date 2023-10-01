@@ -1,5 +1,11 @@
 # Web scraping de infocasas
 
+instalar:
+```
+pip install tqdm
+pip install selenium
+```
+
 * antes que nada iniciar docker desktop
 * docker-compose es un archivo .yml para correr selenium-chrome.
 * por ejemplo tengo un archivo docker-compose.yml en mi escritorio (que tiene el codigo que se ve abajo)

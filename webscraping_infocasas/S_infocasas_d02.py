@@ -1,20 +1,21 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 
 # scraping infocasas
 
 import platform
-from selenium import webdriver
-from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
-from selenium.webdriver.common.by import By
 import time
 import json
+from tqdm import tqdm
+from selenium import webdriver
+from selenium.webdriver.common.by import By
 
 # Obtener el nombre del sistema operativo
 sistema_operativo = platform.system()
 
 if sistema_operativo == "Linux":
-    # instancia del webdriver sobre Selenium Grid 4.12.1 (revision 8e34639b11)
-    driver = webdriver.Remote(command_executor='0.0.0.0:4444/wd/hub',options=webdriver.ChromeOptions())
+    # instancia del webdriver en Linux / selenium/standalone-chrome:latest
+    # en local usar: command_executor='0.0.0.0:4444/wd/hub'
+    driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub', options=webdriver.ChromeOptions())
     print("OS: Linux")
 
 elif sistema_operativo == 'Windows':
@@ -51,10 +52,8 @@ time.sleep(4)
 lst_data = []
 
 # capturar en rango desde la pagina 0 hasta la que determine range()
-for i in range(4):
-
-    # mostrar numero de iteracion por consola
-    print(f"extraccion pagina: {i}")
+# for i in range(4):
+for i in tqdm(range(4)):
 
     # avanzar de pagina
     if i == 1:
@@ -87,9 +86,6 @@ for i in range(4):
 
     for i, article in enumerate(lst_article):
 
-        # mostrar numero de iteracion por consola
-        print(f"alquiler: {i}")
-
         # abre una pestaña nueva
         article.click()
         time.sleep(1)
@@ -102,13 +98,13 @@ for i in range(4):
         try:
             url_link = urls_alquiler[i]
         except Exception:
-            print("error en url_link")
             url_link = ""
             pass
         try:
             id = "infocasas_{}".format(url_link.split("/")[-1])
         except Exception:
             id = ""
+            print("error en id")
             pass
         try:  
             lst_precio = driver.find_elements(By.XPATH, '//div[@id="__next"]//span/strong')
@@ -118,7 +114,6 @@ for i in range(4):
             # obtener tipo de moneda
             moneda = lst_precio[0].text.split(" ")[0]
         except Exception:
-            print("error en lst_precio")
             lst_precio = []
             precio = 0
             moneda = ""
@@ -127,37 +122,31 @@ for i in range(4):
             departamento = driver.find_element(By.CLASS_NAME, 'property-location-tag')
             departamento_split = departamento.text.split(", ")
         except Exception:
-            print("error en departamento")
             departamento_split = []
             pass
         try:
             lst_info_zona = driver.find_elements(By.XPATH, '//div[@id="__next"]//div[3]/div/strong')
         except Exception:
-            print("error en lst_info_zona")
             lst_info_zona = []
             pass
         try:
             lst_info = driver.find_elements(By.XPATH, '//div[@id="__next"]//div[1]//div[2]/span')
         except Exception:
-            print("error en lst_info")
             lst_info = []
             pass
         try:
             banos = str(lst_info[1].text)
         except Exception:
-            print("error en banos")
             banos = ""
             pass
         try:
             area = str(lst_info[2].text)
         except Exception:
-            print("error en area")
             area = ""
             pass
         try:
             cuartos = str(lst_info[0].text)
         except Exception:
-            print("error en cuartos")
             cuartos = ""
             pass
         try:
@@ -170,7 +159,6 @@ for i in range(4):
             lst_imgs = driver.find_elements(By.XPATH, '//div[@class="pmp-image"]//img')
             img_urls = [img.get_attribute("src") for img in lst_imgs]
         except Exception:
-            print("error en abrir galeria")
             img_urls = ""
             pass
         try:
@@ -187,14 +175,13 @@ for i in range(4):
             lat = parts[0].split("@")[1]
             lon = parts[1]
         except Exception:
-            print("error en ir a street view")
             url_map = ""
             lat = 0
             lon = 0
             pass
         try:
             # cerrar galeria
-            btn_galeria_cerrar = driver.find_element(By.CLASS_NAME, 'ant-modal-close')
+            btn_galeria_cerrar = driver.find_element(By.XPATH, '//button[@class="ant-modal-close"]')
             btn_galeria_cerrar.click()
         except Exception:
             pass
