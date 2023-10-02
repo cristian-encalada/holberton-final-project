@@ -11,11 +11,6 @@ instalar selenium:
 pip install selenium
 ```
 
-instalar tqdm:
-```
-pip install tqdm
-```
-
 ejecutar docker-compose:
 ```
 docker-compose -f docker-compose.yml up
