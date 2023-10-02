@@ -5,7 +5,6 @@
 import platform
 import time
 import json
-from tqdm import tqdm
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
@@ -47,7 +46,7 @@ lst_data = []
 
 # capturar en rango desde la pagina 0 hasta la que determine range()
 # for i in range(4):
-for i in tqdm(range(4)):
+for i in range(4):
 
     # avanzar de pagina
     if i == 1:
