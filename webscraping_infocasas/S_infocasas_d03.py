@@ -153,7 +153,7 @@ for i in tqdm(range(4)):
             lst_imgs = driver.find_elements(By.XPATH, '//div[@class="pmp-image"]//img')
             img_urls = [img.get_attribute("src") for img in lst_imgs]
         except Exception:
-            img_urls = ""
+            img_urls = []
             pass
         try:
             # ir a street view
