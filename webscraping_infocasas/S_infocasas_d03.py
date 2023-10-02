@@ -14,11 +14,8 @@ sistema_operativo = platform.system()
 
 if sistema_operativo == "Linux":
     driver = webdriver.Remote(command_executor='http://127.0.0.1:4444', options=webdriver.ChromeOptions())
-    print("OS: Linux")
-
 elif sistema_operativo == 'Windows':
     driver = webdriver.Chrome();
-    print("OS: Windows")
 
 website = "https://www.infocasas.com.uy"
 
