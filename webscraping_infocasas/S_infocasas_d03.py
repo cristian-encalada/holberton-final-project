@@ -204,7 +204,7 @@ for i in tqdm(range(4)):
                     "latitude": float(lat),
                     "longitude": float(lon)
                     },
-                "imagenes": img_urls
+                "images": img_urls
                 }
             lst_data.append(dic_alquiler)
         except Exception:
