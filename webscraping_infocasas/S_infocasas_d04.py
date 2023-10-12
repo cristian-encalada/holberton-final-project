@@ -48,7 +48,6 @@ time.sleep(4)
 lst_data = []
 
 # capturar en rango desde la pagina 0 hasta la que determine range()
-# for i in range(4):
 for i in range(2):
 
     # avanzar de pagina
@@ -112,6 +111,11 @@ for i in range(2):
                 id = ""
                 print("error en id")
                 pass
+            try:
+                title = driver.find_element(By.XPATH, '//div[@id="__next"]//div/h1').text
+            except Exception:
+                title = ""
+                pass
             try:  
                 lst_precio = driver.find_elements(By.XPATH, '//div[@id="__next"]//span/strong')
                 # obtener precio y convertir a flotante
@@ -173,10 +177,11 @@ for i in range(2):
                 pass
             try:
                 # ir a street view
-                time.sleep(3)
+                time.sleep(2)
                 div_street_view = driver.find_element(By.XPATH, '//div[text()="Street View"]')
                 div_street_view.click()
 
+                time.sleep(2)
                 # capturar url de mapa
                 url_google_map = driver.find_element(By.XPATH, '//div[@id="rc-tabs-2-panel-streetView"]//div[1]/div[2]/a')
                 url_map = url_google_map.get_attribute('href')
@@ -184,6 +189,7 @@ for i in range(2):
                 parts = url_map.split(',')
                 lat = parts[0].split("@")[1]
                 lon = parts[1]
+
             except Exception:
                 url_map = ""
                 lat = 0
@@ -200,7 +206,7 @@ for i in range(2):
             try:
                 dic_alquiler = {
                     "id": id,
-                    "title": "",
+                    "title": str(title),
                     "url_link": url_link,
                     "origin": "infocasas",
                     "operation_type": "Alquiler",
