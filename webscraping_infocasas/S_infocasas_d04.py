@@ -170,6 +170,7 @@ for i in range(2):
                 btn_galeria_abrir.click()
 
                 # capturar informacion de galeria de imagenes
+                time.sleep(1)
                 lst_imgs = driver.find_elements(By.XPATH, '//div[@class="pmp-image"]//img')
                 img_urls = [img.get_attribute("src") for img in lst_imgs]
             except Exception:

@@ -17,42 +17,47 @@
             "latitude": -34.9166534,
             "longitude": -56.1583685
         },
-        "images": []
+        "images": [
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.9caa37dde145eb4ae233a7e398e52a9f133e1923.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.8fbeb5d925d7159e51089976534b02db3651127c.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.f84522353d801d94bdbf7127c633d3c3e5ececa5.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.ce63753a19cd6ac412af809c093f085a3986c0f2.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.532186e62871d0161560949c5fadc88b28abf1a6.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.71643c7d83d32ea2bdb02e378cd401f81e13a2bf.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.7a56ff2c18307fb3a1af3a7ea6a3d9ab2fb89bd5.jpg"
+        ]
     },
     {
-        "id": "infocasas_190470942",
-        "title": "ALQUILER OFICINA 4 AMBIENTES PALERMO LA CUMPARSITA FRENTE AL MAR 240M2 EQUIPADA Y CON 2 GARAJES",
-        "url_link": "https://www.infocasas.com.uy/alquiler-oficina-4-ambientes-palermo-la-cumparsita-frente-al-mar-240m2-equipada-y-con-2-garajes/190470942",
+        "id": "infocasas_190544124",
+        "title": "Brenda y Belastiqui",
+        "url_link": "https://www.infocasas.com.uy/brenda-y-belastiqui/190544124",
         "origin": "infocasas",
         "operation_type": "Alquiler",
-        "price": 7200.0,
-        "currency": "USD",
+        "price": 36000.0,
+        "currency": "UYU",
         "state_name": "Montevideo",
-        "zone_name": "Palermo",
-        "property_type": "Oficina",
-        "total_area": 240,
+        "zone_name": "Punta Gorda",
+        "property_type": "Apartamento",
+        "total_area": 73,
         "bathrooms": 2,
-        "bedrooms": 5,
+        "bedrooms": 3,
         "location": {
-            "latitude": -34.9134571,
-            "longitude": -56.1820871
+            "latitude": -34.8953916,
+            "longitude": -56.0755717
         },
         "images": [
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.216_nai_215_5186_512.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.216_nai_215_5186_761.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.216_nai_215_5186_634.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.216_nai_215_5186_331.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.216_nai_215_5186_81.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.216_nai_215_5186_762.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.216_nai_215_5186_282.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.216_nai_215_5186_595.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.216_nai_215_5186_962.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.216_nai_215_5186_413.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.216_nai_215_5186_15.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.216_nai_215_5186_254.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.216_nai_215_5186_531.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.216_nai_215_5186_129.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.216_nai_215_5186_394.jpg"
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.610b6abe11e4061150eded4d5a7d4b56ed51013d.jpeg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.9fb0c4d40dc3a81debf38fe50ddc4f50df9e0858.jpeg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.5817cb0fba561211a9ef915d598ecbb7c52c5dfc.jpeg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.fb83a5c423ae8d881383d7d35e3663ffd09483ad.jpeg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.1c9054b75a4d8e7754fe2710c68e8db1facb1fd3.jpeg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.aa9884aff376db9984bbec51d4f97f60189b091d.jpeg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.d9ecea0076bf2d9c8d1bb0aeb3608249344ec000.jpeg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.e0768aecf90ad73c811748f1034cbef2d23e3412.jpeg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.6fcf07da7cae017919965995d57e1a70bc608674.jpeg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.fba17b542f926da5e1844427249164698debccc5.jpeg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.da01d013f4e7e675e9f5728f9f52eeff9adb073b.jpeg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.b95a448608baff8fe731ccf16ffbb95d900fb65a.jpeg"
         ]
     },
     {
@@ -286,6 +291,42 @@
         ]
     },
     {
+        "id": "infocasas_190470942",
+        "title": "ALQUILER OFICINA 4 AMBIENTES PALERMO LA CUMPARSITA FRENTE AL MAR 240M2 EQUIPADA Y CON 2 GARAJES",
+        "url_link": "https://www.infocasas.com.uy/alquiler-oficina-4-ambientes-palermo-la-cumparsita-frente-al-mar-240m2-equipada-y-con-2-garajes/190470942",
+        "origin": "infocasas",
+        "operation_type": "Alquiler",
+        "price": 7200.0,
+        "currency": "USD",
+        "state_name": "Montevideo",
+        "zone_name": "Palermo",
+        "property_type": "Oficina",
+        "total_area": 240,
+        "bathrooms": 2,
+        "bedrooms": 5,
+        "location": {
+            "latitude": -34.9134571,
+            "longitude": -56.1820871
+        },
+        "images": [
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.216_nai_215_5186_512.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.216_nai_215_5186_761.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.216_nai_215_5186_634.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.216_nai_215_5186_331.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.216_nai_215_5186_81.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.216_nai_215_5186_762.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.216_nai_215_5186_282.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.216_nai_215_5186_595.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.216_nai_215_5186_962.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.216_nai_215_5186_413.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.216_nai_215_5186_15.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.216_nai_215_5186_254.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.216_nai_215_5186_531.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.216_nai_215_5186_129.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.216_nai_215_5186_394.jpg"
+        ]
+    },
+    {
         "id": "infocasas_190541145",
         "title": "Alquiler apto.3 dorm.+servicio+patio uso exclusivo a una cuadra de la Rambla!",
         "url_link": "https://www.infocasas.com.uy/alquiler-apto3-dormserviciopatio-uso-exclusivo-a-una-cuadra-de-la-rambla/190541145",
@@ -339,39 +380,6 @@
             "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.2502ed7ec1fda76b8214cf8c6bdb5a4049de049b.jpg",
             "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.8040101a03215457ac4920239be6427335ded905.jpg",
             "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.65061a8f6414e_d3d9446802a44259755d38e6d163e820.jpg"
-        ]
-    },
-    {
-        "id": "infocasas_190544124",
-        "title": "Brenda y Belastiqui",
-        "url_link": "https://www.infocasas.com.uy/brenda-y-belastiqui/190544124",
-        "origin": "infocasas",
-        "operation_type": "Alquiler",
-        "price": 36000.0,
-        "currency": "UYU",
-        "state_name": "Montevideo",
-        "zone_name": "Punta Gorda",
-        "property_type": "Apartamento",
-        "total_area": 73,
-        "bathrooms": 2,
-        "bedrooms": 3,
-        "location": {
-            "latitude": -34.8953916,
-            "longitude": -56.0755717
-        },
-        "images": [
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.610b6abe11e4061150eded4d5a7d4b56ed51013d.jpeg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.9fb0c4d40dc3a81debf38fe50ddc4f50df9e0858.jpeg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.5817cb0fba561211a9ef915d598ecbb7c52c5dfc.jpeg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.fb83a5c423ae8d881383d7d35e3663ffd09483ad.jpeg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.1c9054b75a4d8e7754fe2710c68e8db1facb1fd3.jpeg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.aa9884aff376db9984bbec51d4f97f60189b091d.jpeg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.d9ecea0076bf2d9c8d1bb0aeb3608249344ec000.jpeg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.e0768aecf90ad73c811748f1034cbef2d23e3412.jpeg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.6fcf07da7cae017919965995d57e1a70bc608674.jpeg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.fba17b542f926da5e1844427249164698debccc5.jpeg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.da01d013f4e7e675e9f5728f9f52eeff9adb073b.jpeg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.b95a448608baff8fe731ccf16ffbb95d900fb65a.jpeg"
         ]
     },
     {
@@ -728,60 +736,6 @@
         ]
     },
     {
-        "id": "infocasas_190498814",
-        "title": "Apartamentos en Cordón",
-        "url_link": "https://www.infocasas.com.uy/apartamentos-en-cordn/190498814",
-        "origin": "infocasas",
-        "operation_type": "Alquiler",
-        "price": 20000.0,
-        "currency": "UYU",
-        "state_name": "Montevideo",
-        "zone_name": "Cordón",
-        "property_type": "Apartamento",
-        "total_area": 49,
-        "bathrooms": 1,
-        "bedrooms": 1,
-        "location": {
-            "latitude": -34.900631,
-            "longitude": -56.1757159
-        },
-        "images": [
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.3_H632_328.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.3_H632_130.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.3_H632_898.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.3_H632_840.jpg"
-        ]
-    },
-    {
-        "id": "infocasas_190548168",
-        "title": "Apartamentos en Pocitos Nuevo",
-        "url_link": "https://www.infocasas.com.uy/apartamentos-en-pocitos-nuevo/190548168",
-        "origin": "infocasas",
-        "operation_type": "Alquiler",
-        "price": 22000.0,
-        "currency": "UYU",
-        "state_name": "Montevideo",
-        "zone_name": "Pocitos Nuevo",
-        "property_type": "Apartamento",
-        "total_area": 48,
-        "bathrooms": 1,
-        "bedrooms": 2,
-        "location": {
-            "latitude": -34.9014663,
-            "longitude": -56.139237
-        },
-        "images": [
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.3_173970013_898.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.3_173970013_909.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.3_173970013_31.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.3_173970013_649.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.3_173970013_692.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.3_173970013_403.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.3_173970013_801.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.3_173970013_748.jpg"
-        ]
-    },
-    {
         "id": "infocasas_190612832",
         "title": "Apartamentos en Pocitos",
         "url_link": "https://www.infocasas.com.uy/apartamentos-en-pocitos/190612832",
@@ -810,6 +764,40 @@
             "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.3_063590014_825.jpg",
             "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.3_063590014_289.jpg",
             "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.3_063590014_830.jpg"
+        ]
+    },
+    {
+        "id": "infocasas_190578112",
+        "title": "Casas en Buceo",
+        "url_link": "https://www.infocasas.com.uy/casas-en-buceo/190578112",
+        "origin": "infocasas",
+        "operation_type": "Alquiler",
+        "price": 24000.0,
+        "currency": "UYU",
+        "state_name": "Montevideo",
+        "zone_name": "Buceo",
+        "property_type": "Casa",
+        "total_area": 60,
+        "bathrooms": 1,
+        "bedrooms": 2,
+        "location": {
+            "latitude": -34.8944083,
+            "longitude": -56.1391605
+        },
+        "images": [
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.3_135140064_573.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.3_135140064_430.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.3_135140064_125.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.3_135140064_90.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.3_135140064_587.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.3_135140064_79.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.3_135140064_33.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.3_135140064_935.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.3_135140064_356.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.3_135140064_714.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.3_135140064_661.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.3_135140064_273.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.3_135140064_457.jpg"
         ]
     },
     {
@@ -900,43 +888,39 @@
         ]
     },
     {
-        "id": "infocasas_189158215",
-        "title": "Alquiler t4 en huertas para Octubre 2023",
-        "url_link": "https://www.infocasas.com.uy/alquiler-t4-en-huertas-para-octubre-2023/189158215",
+        "id": "infocasas_186196339",
+        "title": "Apartamento en Forum 2 dormitorios",
+        "url_link": "https://www.infocasas.com.uy/apartamento-en-forum-2-dormitorios/186196339",
         "origin": "infocasas",
         "operation_type": "Alquiler",
         "price": 2490.0,
         "currency": "USD",
         "state_name": "Montevideo",
-        "zone_name": "Carrasco",
-        "property_type": "Casa",
-        "total_area": 126,
+        "zone_name": "Puerto Buceo",
+        "property_type": "Apartamento",
+        "total_area": 86,
         "bathrooms": 3,
-        "bedrooms": 3,
+        "bedrooms": 2,
         "location": {
-            "latitude": 0.0,
-            "longitude": 0.0
+            "latitude": -34.9105965,
+            "longitude": -56.1338431
         },
         "images": [
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.fa9f4f1408363eaf334be28ad843b5b44402af7b.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.f7e765470d5d18f1452148ae8059e8807c0e7eb9.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.d9d1439450516eb84829064ceae405e94eaff367.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.5a06e7555ff7f1a62b6a882fb7919cec25bb79a1.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.b50a2a475854ed6baa5e7310de63a41bfc2dde1f.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.4f0edf44342138a6404d87327b3d4d8580bd7432.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.009a46f94d80138ba3728353cf9eccb0a204ed38.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.3bbfa5f783c81883ebd449a86d8216a51af39321.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.f25b3cbfb168d9b717e9c3ec4badb875aaf7a9cf.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.5bb3abb95e02af26d642b6446bd9b30e660f7d0b.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.fa6331d0a84f65407a7ea532489848b22e4a8ad3.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.112c3a930430f207a7e12353c2b39c73131f135a.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.6f66bc4e22c62055471c12a8e8e6c7f3059f9df9.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.d5bdecf219732801dea01b13564953b5f008e06e.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.b00ad12e8a073d1ac18a9b5b0c2e3a49400c2e88.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.03a53c1fccbfd9eb36a843bae77798abdf391ada.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.7264a7adc42a7875098689f94326bb870275f780.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.23ca7f87464b8da29f0b7345effc58dd60dfd7c6.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.4245eda12d1cf95b686eab31eceeeba2ff487b20.jpg"
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.30d2cd00c0c3329a1fb68e63d2a461907bbc2d19.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.ca29db40fa76ccb9ea80916609d1e0be548fbe4e.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.67e2b3bb1363e4a9ee3195f655437f546ce4898d.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.91b38f8081a85ae5391ef0f05e8807e944c97dc8.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.ded488b5c93956147f5292aef10ebb0472ef78e4.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.1ff6158313b08efbb15243280ca40b521798b8ef.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.a94d5d03e2ca9acb6824ff1d791ba657d2d4c825.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.bc5ebf312f4e05aa38877b11c43251c0bb978654.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.89e403cdbb108af30c481d661524f153a241907b.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.72a2d9500e97b9de2a79a1307c118410c25cc684.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.362b94a0bf2b76ec8ee0da90f1fa40947f56708b.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.b1160cf66840776b45c73094ab63f22a33eca9a3.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.3eba461ce7549451d2391efc165b9426eafa2764.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.10d8f3ff928f1fe828d817e28c8bdf8fb5499c4a.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.79bbec7fd3ea795ab03b26bc45e71e1c2b75a92c.jpg"
         ]
     },
     {
@@ -966,6 +950,42 @@
             "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.650673_nai_246_193_460.jpg",
             "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.650673_nai_246_193_337.jpg",
             "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.650673_nai_246_193_937.jpg"
+        ]
+    },
+    {
+        "id": "infocasas_190291328",
+        "title": "ALQUILER FORUM PUERTO DEL BUCEO PENTHOUSE",
+        "url_link": "https://www.infocasas.com.uy/alquiler-forum-puerto-del-buceo-penthouse/190291328",
+        "origin": "infocasas",
+        "operation_type": "Alquiler",
+        "price": 6500.0,
+        "currency": "USD",
+        "state_name": "Montevideo",
+        "zone_name": "Puerto Buceo",
+        "property_type": "Apartamento",
+        "total_area": 200,
+        "bathrooms": 3,
+        "bedrooms": 2,
+        "location": {
+            "latitude": -34.9096196,
+            "longitude": -56.134466
+        },
+        "images": [
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.152917_CW197882_177.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.152917_CW197882_175.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.152917_CW197882_319.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.152917_CW197882_714.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.152917_CW197882_479.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.152917_CW197882_323.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.152917_CW197882_302.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.152917_CW197882_214.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.152917_CW197882_25.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.152917_CW197882_477.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.152917_CW197882_320.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.152917_CW197882_858.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.152917_CW197882_873.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.152917_CW197882_67.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.152917_CW197882_1.jpg"
         ]
     },
     {
@@ -1180,70 +1200,43 @@
         ]
     },
     {
-        "id": "infocasas_186196339",
-        "title": "Apartamento en Forum 2 dormitorios",
-        "url_link": "https://www.infocasas.com.uy/apartamento-en-forum-2-dormitorios/186196339",
+        "id": "infocasas_189158215",
+        "title": "Alquiler t4 en huertas para Octubre 2023",
+        "url_link": "https://www.infocasas.com.uy/alquiler-t4-en-huertas-para-octubre-2023/189158215",
         "origin": "infocasas",
         "operation_type": "Alquiler",
         "price": 2490.0,
         "currency": "USD",
         "state_name": "Montevideo",
-        "zone_name": "Puerto Buceo",
-        "property_type": "Apartamento",
-        "total_area": 86,
-        "bathrooms": 3,
-        "bedrooms": 2,
-        "location": {
-            "latitude": -34.9105965,
-            "longitude": -56.1338431
-        },
-        "images": [
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.30d2cd00c0c3329a1fb68e63d2a461907bbc2d19.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.ca29db40fa76ccb9ea80916609d1e0be548fbe4e.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.67e2b3bb1363e4a9ee3195f655437f546ce4898d.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.91b38f8081a85ae5391ef0f05e8807e944c97dc8.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.ded488b5c93956147f5292aef10ebb0472ef78e4.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.1ff6158313b08efbb15243280ca40b521798b8ef.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.a94d5d03e2ca9acb6824ff1d791ba657d2d4c825.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.bc5ebf312f4e05aa38877b11c43251c0bb978654.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.89e403cdbb108af30c481d661524f153a241907b.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.72a2d9500e97b9de2a79a1307c118410c25cc684.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.362b94a0bf2b76ec8ee0da90f1fa40947f56708b.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.b1160cf66840776b45c73094ab63f22a33eca9a3.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.3eba461ce7549451d2391efc165b9426eafa2764.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.10d8f3ff928f1fe828d817e28c8bdf8fb5499c4a.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.79bbec7fd3ea795ab03b26bc45e71e1c2b75a92c.jpg"
-        ]
-    },
-    {
-        "id": "infocasas_189589201",
-        "title": "Alquiler casa Ph en Parque Miramar",
-        "url_link": "https://www.infocasas.com.uy/alquiler-casa-ph-en-parque-miramar/189589201",
-        "origin": "infocasas",
-        "operation_type": "Alquiler",
-        "price": 2000.0,
-        "currency": "USD",
-        "state_name": "Montevideo",
-        "zone_name": "Parque Miramar",
+        "zone_name": "Carrasco",
         "property_type": "Casa",
-        "total_area": 130,
+        "total_area": 126,
         "bathrooms": 3,
         "bedrooms": 3,
         "location": {
-            "latitude": -34.8654509,
-            "longitude": -56.0337881
+            "latitude": 0.0,
+            "longitude": 0.0
         },
         "images": [
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.1377ee7dece1c0214f23ab713b412a9df3daa309.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.1fa937dde4e408504e1b884495db559f034f7f66.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.e7f87901dc542c4b5c3e2b09a13bee8208b622d0.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.d834f6c849bb6638a27d95edda00696c1d657aa2.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.d309f3ad2556597b67fdb640c3546438778ee53a.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.9421caf3208271eb6e9fba4685c5bf0d96a5c005.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.827331ef6f72634ff56b41dc7e417370f822ae9a.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.469770f01557198c76a0ae652c3940f63e98e448.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.4f44b0a3b6888301cbc8ee9f5058f0e8819e39e4.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.dffac3118edea3b03aff133426c19f13d01542e6.jpg"
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.fa9f4f1408363eaf334be28ad843b5b44402af7b.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.f7e765470d5d18f1452148ae8059e8807c0e7eb9.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.d9d1439450516eb84829064ceae405e94eaff367.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.5a06e7555ff7f1a62b6a882fb7919cec25bb79a1.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.b50a2a475854ed6baa5e7310de63a41bfc2dde1f.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.4f0edf44342138a6404d87327b3d4d8580bd7432.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.009a46f94d80138ba3728353cf9eccb0a204ed38.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.3bbfa5f783c81883ebd449a86d8216a51af39321.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.f25b3cbfb168d9b717e9c3ec4badb875aaf7a9cf.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.5bb3abb95e02af26d642b6446bd9b30e660f7d0b.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.fa6331d0a84f65407a7ea532489848b22e4a8ad3.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.112c3a930430f207a7e12353c2b39c73131f135a.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.6f66bc4e22c62055471c12a8e8e6c7f3059f9df9.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.d5bdecf219732801dea01b13564953b5f008e06e.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.b00ad12e8a073d1ac18a9b5b0c2e3a49400c2e88.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.03a53c1fccbfd9eb36a843bae77798abdf391ada.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.7264a7adc42a7875098689f94326bb870275f780.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.23ca7f87464b8da29f0b7345effc58dd60dfd7c6.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.4245eda12d1cf95b686eab31eceeeba2ff487b20.jpg"
         ]
     },
     {
@@ -1281,6 +1274,37 @@
         ]
     },
     {
+        "id": "infocasas_189589201",
+        "title": "Alquiler casa Ph en Parque Miramar",
+        "url_link": "https://www.infocasas.com.uy/alquiler-casa-ph-en-parque-miramar/189589201",
+        "origin": "infocasas",
+        "operation_type": "Alquiler",
+        "price": 2000.0,
+        "currency": "USD",
+        "state_name": "Montevideo",
+        "zone_name": "Parque Miramar",
+        "property_type": "Casa",
+        "total_area": 130,
+        "bathrooms": 3,
+        "bedrooms": 3,
+        "location": {
+            "latitude": -34.8654509,
+            "longitude": -56.0337881
+        },
+        "images": [
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.1377ee7dece1c0214f23ab713b412a9df3daa309.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.1fa937dde4e408504e1b884495db559f034f7f66.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.e7f87901dc542c4b5c3e2b09a13bee8208b622d0.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.d834f6c849bb6638a27d95edda00696c1d657aa2.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.d309f3ad2556597b67fdb640c3546438778ee53a.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.9421caf3208271eb6e9fba4685c5bf0d96a5c005.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.827331ef6f72634ff56b41dc7e417370f822ae9a.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.469770f01557198c76a0ae652c3940f63e98e448.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.4f44b0a3b6888301cbc8ee9f5058f0e8819e39e4.jpg",
+            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.dffac3118edea3b03aff133426c19f13d01542e6.jpg"
+        ]
+    },
+    {
         "id": "infocasas_190167989",
         "title": "Alquiler casa 3 dormitorios en zona San Nicolas- Barrio Zen",
         "url_link": "https://www.infocasas.com.uy/alquiler-casa-3-dormitorios-en-zona-san-nicolas-barrio-zen/190167989",
@@ -1313,42 +1337,6 @@
             "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.d33d0e8cf485e5ab2cce3bb311f9d9e52c186f32.jpg",
             "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.d0c8acfd223373be3463214190b16540ef09d8f6.jpg",
             "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.0de0c122124d174a8ea31d663e2b219d3e2457d5.jpg"
-        ]
-    },
-    {
-        "id": "infocasas_190291328",
-        "title": "ALQUILER FORUM PUERTO DEL BUCEO PENTHOUSE",
-        "url_link": "https://www.infocasas.com.uy/alquiler-forum-puerto-del-buceo-penthouse/190291328",
-        "origin": "infocasas",
-        "operation_type": "Alquiler",
-        "price": 6500.0,
-        "currency": "USD",
-        "state_name": "Montevideo",
-        "zone_name": "Puerto Buceo",
-        "property_type": "Apartamento",
-        "total_area": 200,
-        "bathrooms": 3,
-        "bedrooms": 2,
-        "location": {
-            "latitude": -34.9096196,
-            "longitude": -56.134466
-        },
-        "images": [
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.152917_CW197882_177.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.152917_CW197882_175.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.152917_CW197882_319.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.152917_CW197882_714.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.152917_CW197882_479.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.152917_CW197882_323.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.152917_CW197882_302.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.152917_CW197882_214.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.152917_CW197882_25.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.152917_CW197882_477.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.152917_CW197882_320.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.152917_CW197882_858.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.152917_CW197882_873.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.152917_CW197882_67.jpg",
-            "https://cdn2.infocasas.com.uy/repo/img/th.outside500x1.152917_CW197882_1.jpg"
         ]
     },
     {
