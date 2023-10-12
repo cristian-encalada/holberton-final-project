@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 # scraping gallito
 
 import platform
@@ -10,18 +12,13 @@ from selenium.webdriver.common.action_chains import ActionChains
 # Obtener el nombre del sistema operativo
 sistema_operativo = platform.system()
 
-chrome_options = webdriver.ChromeOptions()
-chrome_options.add_argument("--disable-notifications")
-
 if sistema_operativo == "Linux":
-    driver = webdriver.Remote(command_executor='http://127.0.0.1:4444', options=chrome_options)
+    driver = webdriver.Remote(command_executor='http://127.0.0.1:4444', options=webdriver.ChromeOptions())
 elif sistema_operativo == 'Windows':
     driver = webdriver.Chrome()
 
 # website en alquiler de inmuebles
 website = "https://www.gallito.com.uy"
-
-time.sleep(4)
 
 driver.get(website)
 driver.maximize_window()
@@ -83,10 +80,6 @@ for i in range(2):
             precioString = driver.find_element(By.XPATH, '//div[@id="div_datosBasicos"]/div[2]/span').text
             precio = float(precioString.split(" ")[-1].replace(".",""))
             moneda = precioString.split(" ")[0]
-            if moneda == '$U':
-                moneda = 'UYU'
-            elif moneda == 'U$S':
-                moneda = 'USD'
         except Exception:
             pass
         try:
@@ -140,14 +133,13 @@ for i in range(2):
         try:
             dic_alquiler = {
                 "id": id,
-                "title": "",
                 "url_link": url_alquiler,
                 "origin": "gallito",
                 "operation_type": "Alquiler",
                 "price": precio,
                 "currency": str(moneda),
                 "state_name": departamento,
-                "zone_name": zona,
+                "city_name": zona,
                 "property_type": tipo_propiedad,
                 "total_area": int(metros),
                 "bathrooms": int(banos),
@@ -168,6 +160,7 @@ for i in range(2):
 
 #---------------------------------------------------------------
 #---------------------------------------------------------------
+
 
 # exportar JSON
 json_data = json.dumps(lst_data, indent=4, ensure_ascii=False)
