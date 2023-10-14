@@ -65,7 +65,7 @@ custom_avanzar = avanzar_pag.get_attribute("href")
 lst_data = []
 
 # capturar en rango desde la pagina 0 hasta la que determine range()
-for i in range(4):
+for i in range(2):
 
     if i == 0:
         # pagina 0 de alquileres
@@ -197,7 +197,7 @@ for i in range(4):
 
 # directorio de guardado
 if sistema_operativo == "Linux":
-    jsonPath = 'gallito.json'
+    jsonPath = 'root/Alquivago/webscraping/webscraping_gallito/gallito.json'
 else:
     jsonPath = 'gallito.json'
 

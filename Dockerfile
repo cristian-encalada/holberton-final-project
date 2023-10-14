@@ -1,5 +1,5 @@
 # docker build -t hentype/custom .
-# docker run -dit -p 4444:4444 -p 7900:7900 -p 8080:8080 --shm-size="2g" --cpus 1.5 hentype/custom 
+# docker run -dit -p 4444:4444 -p 7900:7900 -p 8080:8080 --shm-size="2g" hentype/custom 
 
 FROM selenium/standalone-chrome:latest
 
@@ -45,8 +45,10 @@ RUN mkdir -p /root/airflow/dags && \
     rm -r /root/airflow/dags &&\
     mkdir /root/airflow/dags &&\
     cp /root/airflow/tmp/*.py /root/airflow/dags &&\
-    rm -r /root/airflow/tmp 
- 
+    rm -r /root/airflow/tmp
+
 WORKDIR /root
 
+# CMD airflow scheduler
+# CMD airflow webserver
 # CMD airflow standalone
