@@ -13,6 +13,7 @@ docker pull hentype/custom:latest
 
 start Airflow:
 ```
+airflow scheduler
 airflow webserver
 airflow standalone
 ```
