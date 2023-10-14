@@ -20,11 +20,11 @@ default_args = {
 
 def scraping_infocasas():
     logging.info('performing infocasas')
-    subprocess.run(['python3', 'root/Alquivago/webscraping/webscraping_infocasas/S_infocasas_d04.py'])
+    subprocess.run(['python3', 'root/Alquivago/webscraping/webscraping_infocasas/S_infocasas_v00.py'])
 
 def scraping_gallito():
     logging.info('performing gallito')
-    subprocess.run(['python3', 'root/Alquivago/webscraping/webscraping_gallito/S_gallito_d03.py'])
+    subprocess.run(['python3', 'root/Alquivago/webscraping/webscraping_gallito/S_gallito_v00.py'])
 
 
 # cada scraping debe ejecutarse como tarea independiente
