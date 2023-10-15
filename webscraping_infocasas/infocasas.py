@@ -234,7 +234,6 @@ for i in range(2):
             driver.switch_to.window(main_window)
 
         except Exception:
-            print(article.text)
             pass
 
 #---------------------------------------------------------------
@@ -242,7 +241,7 @@ for i in range(2):
 
 # directorio de guardado
 if sistema_operativo == "Linux":
-    jsonPath = 'root/Alquivago/webscraping/webscraping_infocasas/infocasas.json'
+    jsonPath = 'infocasas.json'
 else:
     jsonPath = 'infocasas.json'
 
