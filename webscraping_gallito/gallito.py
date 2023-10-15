@@ -67,14 +67,6 @@ lst_data = []
 # capturar en rango desde la pagina 0 hasta la que determine range()
 for i in range(2):
 
-    if i == 0:
-        # pagina 0 de alquileres
-        driver.get(selecDepart)
-    else:
-        # se crea url cambiando el ultimo char de la url
-        custom_url_avanzando = f"{custom_avanzar[:-1]}{i + 1}"
-        driver.get(custom_url_avanzando)
-
     # captura la lista de elementos de alquiler
     lst_alquiler = driver.find_elements(By.XPATH, '//div[3]/div[1]/div/div[1]/a')
 
@@ -197,7 +189,7 @@ for i in range(2):
 
 # directorio de guardado
 if sistema_operativo == "Linux":
-    jsonPath = 'root/Alquivago/webscraping/webscraping_gallito/gallito.json'
+    jsonPath = 'gallito.json'
 else:
     jsonPath = 'gallito.json'
 
