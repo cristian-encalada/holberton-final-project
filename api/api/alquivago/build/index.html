@@ -15,7 +15,8 @@
         document.getElementById('getDataButton').addEventListener('click', () => {
             // Realiza una solicitud a la API del backend
             //fetch('/api/v1/rent/filtro?page=1&tipos=Casa&zonas=Brazo Oriental&dormitorios=2&baños=1&moneda=UYU&min_max=22000,N&area=80,N') // Cambia la URL a la ruta de tu API
-            fetch('/api/v1/rent/filtro?page=14&tipos=Apartamento,Casa&orden=price:1') // Cambia la URL a la ruta de tu API
+            //fetch('/api/v1/rent/filtro?page=1&tipos=1,2&orden=price:1') // Cambia la URL a la ruta de tu API
+            fetch('/api/v1/rent/')
                 .then(response => response.json())
                 .then(data => {
                     // Muestra los datos en el contenedor

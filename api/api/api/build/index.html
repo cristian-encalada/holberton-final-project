@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Demo</title>
+</head>
+<body>
+    <h1>API Demo</h1>
+    <button id="getDataButton">Obtener Datos</button>
+    <div id="dataContainer"></div>
+
+    <script>
+        // Agrega un evento clic al botón
+        document.getElementById('getDataButton').addEventListener('click', () => {
+            // Realiza una solicitud a la API del backend
+            //fetch('/api/v1/rent/filtro?page=1&tipos=Casa&zonas=Brazo Oriental&dormitorios=2&baños=1&moneda=UYU&min_max=22000,N&area=80,N') // Cambia la URL a la ruta de tu API
+            //fetch('/api/v1/rent/filtro?page=1&tipos=1,2&orden=price:1') // Cambia la URL a la ruta de tu API
+            fetch('/api/v1/rent/')
+                .then(response => response.json())
+                .then(data => {
+                    // Muestra los datos en el contenedor
+                    document.getElementById('dataContainer').innerHTML = JSON.stringify(data, null, 2);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        });
+    </script>
+</body>
+</html>

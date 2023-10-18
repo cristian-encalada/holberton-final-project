@@ -59,3 +59,8 @@ def sorting(text):
                         s[1] = -1
                     ret[s[0]] = s[1]
     return ret
+
+
+def conversion():
+    """return de conversion betwin two currencys"""
+    return 40
