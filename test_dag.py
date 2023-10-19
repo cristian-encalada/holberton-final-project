@@ -1,3 +1,22 @@
+# Airflow script
+
+import subprocess
+from datetime import datetime
+from datetime import timedelta
+from airflow import DAG
+from airflow.operators.python import PythonOperator
+from airflow.utils.dates import days_ago
+import logging
+
+default_args = {
+    'owner': 'airflow',
+    'depends_on_past': False,
+    'email': ['martinleiro9@gmail.com'],
+    'email_on_failure': True,
+    'email_on_retry': False,
+    'retries': 0,
+    'catchup': False
+}
 
 def scraping_infocasas():
     logging.info('performing infocasas')
@@ -18,7 +37,7 @@ with DAG(
     'dag_infocasas',
     default_args=default_args,
     description='Scraping infocasas',
-    schedule_interval = '0 */4 * * *',
+    schedule_interval = '0 */3 * * *',
     start_date=datetime(2023, 10, 1),
     catchup=False,
     tags=['infocasas']
@@ -40,7 +59,7 @@ with DAG(
     'dag_upload_data',
     default_args=default_args,
     description='upload data',
-    schedule_interval = '0 */3 * * *',
+    schedule_interval = '0 */4 * * *',
     start_date=datetime(2023, 10, 1),
     catchup=False,
     tags=['upload']

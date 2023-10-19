@@ -1,21 +1,18 @@
 # docker build -t hentype/custom .
-# docker run -dit -p 4444:4444 -p 7900:7900 -p 8080:8080 --shm-size="3g" --cpus=2.5 hentype/custom
+# docker run -dit -p 4444:4444 -p 8080:8080 --shm-size="3g" --cpus=2.5 hentype/custom
 
 FROM selenium/standalone-chrome:latest
 
 RUN sudo apt update
 RUN sudo apt-get -y install python3-pip
 RUN sudo pip3 install selenium
-RUN sudo pip install selenium
+RUN sudo pip3 install PyGithub
 
 ENV SE_VNC_NO_PASSWORD=1
-# ENV SE_VNC_VIEW_ONLY=1
-ENV SE_NODE_MAX_SESSIONS=2
-ENV SE_NODE_SESSION_TIMEOUT=10
-ENV SE_VNC_NO_PASSWORD=1
+ENV SE_NODE_MAX_SESSIONS=5
+ENV SE_NODE_SESSION_TIMEOUT=15
 
 EXPOSE 4444
-EXPOSE 4443
 EXPOSE 8080
 
 USER root
@@ -32,9 +29,6 @@ ENV PYTHON_VERSION=3.8
 ENV CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-${PYTHON_VERSION}.txt"
 RUN sudo pip install "apache-airflow==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"
 
-# inicializa la base de datos de Airflow
-RUN airflow db init
-
 RUN mkdir -p /root/airflow/dags && \
     cd /root/airflow/dags && \
     git clone -b dev https://github.com/cristian-encalada/Alquivago.git /root/airflow/dags && \
@@ -45,8 +39,4 @@ RUN mkdir -p /root/airflow/dags && \
     cp /root/airflow/tmp/*.py /root/airflow/dags &&\
     rm -r /root/airflow/tmp
 
-WORKDIR /root/Alquivago/
-
-# CMD airflow scheduler
-# CMD airflow webserver
 # CMD airflow standalone
