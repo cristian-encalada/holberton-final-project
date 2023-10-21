@@ -2,11 +2,11 @@ from github import Github
 import os
 
 # token github desde variable de entorno
-token = os.environ['TOKEN'] = 'colocar un toquen aca'
+token = os.environ['TOKEN'] = 'gha_jyFmn2tDUKcRwtrKduF2LaOmWzkNnk0MbDyA'
 
 # chequear si no se agrega el token
 if token is None:
-    raise ValueError("GitHub token needed. ( TOKEN='yourtoken' python3 upload.py )")
+    raise ValueError("GitHub token needed.")
 
 g = Github(token)
 
@@ -17,8 +17,9 @@ branch_name = "main"
 
 # clave: ruta local , valor: ruta repositorio
 json_files = {
-    "/gallito.json": "data/gallito.json",
-    "/infocasas.json": "data/infocasas.json",
+    "/root/airflow/dags/gallito.json": "data/gallito.json",
+    "/root/airflow/dags/infocasas.json": "data/infocasas.json",
+    "/extracted_data.json": "data/mercadolibre.json"
 }
 
 # leer archivo json

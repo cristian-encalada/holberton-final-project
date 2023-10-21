@@ -34,12 +34,12 @@ __Flasgger UI__
 http://127.0.0.1:5000/apidocs/#/
 ```
 
-![Flasgger UI](/api/v1/views/documentation/readme_screenshots/Flassger_URL.png)
+![Flasgger UI](/api/handlers/documentation/readme_screenshots/Flassger_URL.png)
 
 __Request API example:__
 
 
-![API endpoit request](/api/v1/views/documentation/readme_screenshots/Rents_get_all_request.png)
+![API endpoit request](/api/handlers/documentation/readme_screenshots/Rents_get_all_request.png)
 
 
 Response sample data:

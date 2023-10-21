@@ -3,6 +3,11 @@ get rents with filters
 tags:
   - Rents
 parameters:
+  - name: type_operations
+    in: path
+    type: string
+    required: true
+    description: Type of operations (e.g., rent, buy)
   - name: page
     in: query
     type: integer
