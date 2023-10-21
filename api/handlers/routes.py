@@ -55,14 +55,15 @@ def configure_routes(app):
         price_min_max = chek_int(request.args.get('min_max'))
         area_min_max = chek_int(request.args.get('area'))
 
-        if currency is not None and price_min_max is not None and len(price_min_max) == 2:
+        if price_min_max is not None and len(price_min_max) == 2:
             filters["price"] = {
-                "currency" : request.args.get('moneda'),
+                "currency" : currency,
                 "min": price_min_max[0],
                 "max": price_min_max[1],
                 "conv": conv}
-        elif currency is not None and price_min_max is None:
+        else:
             filters["currency"] = currency
+
         if area_min_max is not None and len(area_min_max) == 2:
             filters["area"] = {
                 "min": area_min_max[0],

@@ -73,7 +73,7 @@ def get_rents(typre_operations, conv, filters, page, rents_per_page):
     Returns 2 elements in a tuple: (properties, total_num_properties)
     """
     if "rent" == typre_operations:
-        propertys = "collected_data"
+        propertys = "rent_col"
     elif "buy" == typre_operations:
         propertys = "buy_col"
     else:

@@ -5,7 +5,10 @@ def f_currency(currency):
     currency es un string,
     retorno un diccionario con la consulta
     """
-    return({"currency": currency})
+    types = ["UYU", "USD"]
+    if currency in types:
+        return({"currency": currency})
+    return (None)
 
 
 def f_types(types):
@@ -14,7 +17,7 @@ def f_types(types):
     [num , ...],
     retorno un diccionario con la consulta
     """
-    from api.v1.views.db import db
+    from modules.db import db
     
     """property_types = list(db.property_types_col.find({"property_types": {"$exists": True}}))
     property_types = property_types[0]['property_types']
@@ -35,7 +38,7 @@ def f_zones(zones):
     retorno un diccionario con la consulta
     """
     
-    from api.v1.views.db import db
+    from modules.db import db
     result = [doc["zona"] for doc in db.zonas_mvd_col.find({"id": {"$in": zones}}, {"zona": 1, "_id": 0})]
 
 
