@@ -1,5 +1,5 @@
 import requests
-import json
+
 
 def is_int(text):
     """convierte un numero en string en un int positivo,

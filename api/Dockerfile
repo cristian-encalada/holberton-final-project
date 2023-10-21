@@ -5,6 +5,8 @@ RUN apt-get update && \
     apt-get install -y python3 python3-pip
 # Instala git
 RUN apt-get install -y git
+# Instala requests
+RUN pip install requests
 # Instala flask-CORS, flassger y pymongo
 RUN pip install -U flask-cors
 RUN pip install flasgger
