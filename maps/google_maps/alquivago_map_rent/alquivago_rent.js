@@ -16,15 +16,30 @@ async function initMap() {
   const data = await response.json();
 
   if (data && data.rents && Array.isArray(data.rents)) {
-    // Filter data for "origin" equal to "gallito"
-    const gallitoData = data.rents.filter((rent) => rent.origin === "gallito");
-
-    // Create markers for each location
-    gallitoData.forEach((rent) => {
+    data.rents.forEach((rent) => {
       if (rent.location && rent.location.latitude && rent.location.longitude) {
-        // Create an SVG icon
         const glyphImg = document.createElement("img");
-        glyphImg.src = "https://raw.githubusercontent.com/cristian-encalada/Alquivago/maps/maps/google_maps/assets/MELI_24px.svg";
+        let iconSrc;
+
+        // Determine the icon source based on the "origin" field
+        switch (rent.origin) {
+          case "gallito":
+            iconSrc = "https://raw.githubusercontent.com/cristian-encalada/Alquivago/maps/maps/google_maps/assets/MELI_24px.svg";
+            break;
+          case "infocasas":
+            iconSrc = "https://raw.githubusercontent.com/cristian-encalada/Alquivago/maps/maps/google_maps/assets/infocasas.svg";
+            break;
+          case "mercado_libre":
+            iconSrc = "https://raw.githubusercontent.com/cristian-encalada/Alquivago/maps/maps/google_maps/assets/mercado_libre.svg";
+            break;
+          default:
+            // Use a default icon if "origin" doesn't match any of the cases
+            iconSrc = "default-icon-url.png";
+        }
+
+        glyphImg.src = iconSrc;
+
+        // Create a marker with the determined icon source
         const glyphSvgPinElement = new PinElement({
           glyph: glyphImg,
         });
