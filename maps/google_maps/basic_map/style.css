@@ -1,14 +1,14 @@
-/**
- * @license
- * Copyright 2019 Google LLC. All Rights Reserved.
- * SPDX-License-Identifier: Apache-2.0
- */
 /* 
  * Always set the map height explicitly to define the size of the div element
  * that contains the map. 
  */
  #map {
   height: 100%;
+/*
+  height: 400px;
+  width: 100%;
+*/
+
 }
 
 /* 
@@ -20,8 +20,3 @@ body {
   margin: 0;
   padding: 0;
 }
-
-[class$=api-load-alpha-banner] {
-  display: none;
-}
-
