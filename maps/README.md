@@ -45,6 +45,13 @@ https://developers.google.com/maps/documentation/javascript/examples/boundaries-
 
 https://gadm.org/index.html
 
+GeoJSON URLs:
+
+__Level 0:__
+
+https://geodata.ucdavis.edu/gadm/gadm4.1/json/gadm41_URY_0.json
+
+
 #### Tools
 
 https://www.freeconvert.com/jpg-to-svg/download
