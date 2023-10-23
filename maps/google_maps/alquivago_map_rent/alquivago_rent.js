@@ -50,7 +50,7 @@ async function initMap() {
         });
 
         // Create a marker
-        new AdvancedMarkerElement({
+        const marker = new AdvancedMarkerElement({
           map,
           position: {
             lat: rent.location.latitude,
@@ -59,6 +59,25 @@ async function initMap() {
           content: glyphSvgPinElement.element,
           title: rent.title,
         });
+
+        // Determine the price format based on the currency
+        let priceInfo;
+        if (rent.currency === "UYU") {
+          priceInfo = `<div><strong>$ ${rent.price} ${rent.currency}</strong></div>`;
+        } else if (rent.currency === "USD") {
+          priceInfo = `<div><strong>U$S ${rent.price} ${rent.currency}</strong></div>`;
+        } else {
+          // Use a default format if currency is neither UYU nor USD
+          priceInfo = `<div><strong>${rent.price} ${rent.currency}</strong></div>`;
+        }
+
+        // Create an InfoWindow to display price information
+        const infoWindow = new google.maps.InfoWindow({
+          content: priceInfo,
+        });
+
+        // Open the InfoWindow by default for each marker
+        infoWindow.open(map, marker);
       }
     });
   }
