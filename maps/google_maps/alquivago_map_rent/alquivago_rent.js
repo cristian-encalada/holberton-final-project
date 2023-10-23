@@ -11,8 +11,11 @@ async function initMap() {
     mapId: "4504f8b37365c3d0",
   });
 
+  // Define the icon size
+  const iconSize = { width: 32, height: 32 };
+
   // Fetch data from the API endpoint
-  const response = await fetch("https://alquivago-flask-apis.vercel.app/api/v1/rent/inmuebles");
+  const response = await fetch("https://alquivago-flask-apis.vercel.app/api/v1/rent/mapa");
   const data = await response.json();
 
   if (data && data.rents && Array.isArray(data.rents)) {
@@ -24,13 +27,13 @@ async function initMap() {
         // Determine the icon source based on the "origin" field
         switch (rent.origin) {
           case "gallito":
-            iconSrc = "https://raw.githubusercontent.com/cristian-encalada/Alquivago/maps/maps/google_maps/assets/MELI_24px.svg";
+            iconSrc = "https://raw.githubusercontent.com/cristian-encalada/Alquivago/maps/maps/google_maps/assets/gallito_logo.svg";
             break;
           case "infocasas":
-            iconSrc = "https://raw.githubusercontent.com/cristian-encalada/Alquivago/maps/maps/google_maps/assets/infocasas.svg";
+            iconSrc = "https://raw.githubusercontent.com/cristian-encalada/Alquivago/maps/maps/google_maps/assets/infocasas_logo.svg";
             break;
           case "mercado_libre":
-            iconSrc = "https://raw.githubusercontent.com/cristian-encalada/Alquivago/maps/maps/google_maps/assets/mercado_libre.svg";
+            iconSrc = "https://raw.githubusercontent.com/cristian-encalada/Alquivago/maps/maps/google_maps/assets/mercado_libre_logo.svg";
             break;
           default:
             // Use a default icon if "origin" doesn't match any of the cases
@@ -38,6 +41,8 @@ async function initMap() {
         }
 
         glyphImg.src = iconSrc;
+        glyphImg.width = iconSize.width;
+        glyphImg.height = iconSize.height;
 
         // Create a marker with the determined icon source
         const glyphSvgPinElement = new PinElement({

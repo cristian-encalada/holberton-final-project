@@ -28,3 +28,23 @@ https://console.cloud.google.com/cloud-resource-manager
 
 3.  Maps JavaScript API -> Enable
 - https://console.cloud.google.com/google/maps-apis/
+
+### Google Maps API - Divide the map into zones
+
+https://stackoverflow.com/questions/50213710/how-do-i-use-a-gadm-file-to-get-coordinates
+
+__Examples with boundaries - Google maps documentation__
+
+https://developers.google.com/maps/documentation/javascript/examples/boundaries-simple#maps_boundaries_simple-javascript
+
+https://developers.google.com/maps/documentation/javascript/examples/boundaries-choropleth
+
+https://developers.google.com/maps/documentation/javascript/examples/boundaries-click
+
+#### GADM maps and data
+
+https://gadm.org/index.html
+
+#### Tools
+
+https://www.freeconvert.com/jpg-to-svg/download

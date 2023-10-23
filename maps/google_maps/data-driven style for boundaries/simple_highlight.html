@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Highlight Montevideo City, Uruguay</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=drawing"></script>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <script>
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: -34.9011, lng: -56.1645 },
+                zoom: 12
+            });
+
+            var montevideoCoordinates = [
+                { lat: -34.8912, lng: -56.1660 },
+                { lat: -34.8976, lng: -56.1574 },
+                { lat: -34.9050, lng: -56.1600 },
+                { lat: -34.9098, lng: -56.1716 },
+                { lat: -34.9004, lng: -56.1774 },
+            ];
+
+            var montevideoPolygon = new google.maps.Polygon({
+                paths: montevideoCoordinates,
+                strokeColor: '#FF0000',
+                strokeOpacity: 0.8,
+                strokeWeight: 2,
+                fillColor: '#FF0000',
+                fillOpacity: 0.35
+            });
+
+            montevideoPolygon.setMap(map);
+        }
+    </script>
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDibwbhNlCUsjnrzfTC6xe_Ppaw6CvbkWI&callback=initMap">
+    </script>
+</body>
+</html>

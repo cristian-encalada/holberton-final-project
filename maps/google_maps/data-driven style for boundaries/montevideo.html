@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Regions of France</title>
+    <style>
+        #map {
+            height: 100%;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+
+    function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 6,
+            center: {lat: 47.147583, lng: 2.420839}
+        });
+
+        var ctaLayer = new google.maps.KmlLayer({
+            url: 'http://evnica.com/kml/France5.kml',
+            map: map
+        });
+    }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDibwbhNlCUsjnrzfTC6xe_Ppaw6CvbkWI&callback=initMap">
+</script>
+</body>
+</html>
