@@ -71,3 +71,14 @@ https://developers.google.com/maps/documentation/javascript/dds-boundaries/cover
 
 
 https://www.youtube.com/watch?v=tAR63GBwk90&t=37s
+
+
+https://console.cloud.google.com/projectselector2/google/maps-apis/credentials?utm_source=Docs_Credentials
+
+
+### Extract zone coordinates
+
+https://maps.googleapis.com/maps/api/geocode/json?address=The+Bronx,New+York&key=API_KEY
+
+
+https://maps.googleapis.com/maps/api/geocode/json?address=Tres+Cruces,Montevideo&key=API_KEY
