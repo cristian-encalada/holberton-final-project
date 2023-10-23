@@ -1,4 +1,4 @@
-from modules.f_filters import f_area, f_bathrooms, f_bedrooms, f_currency, f_price, f_types, f_zones
+from modules.f_filters import f_operation, f_area, f_bathrooms, f_bedrooms, f_currency, f_price, f_types, f_zones
 from modules.sort_delete import sort_apply, delete__id
 from flask import current_app, g
 from werkzeug.local import LocalProxy
@@ -59,7 +59,7 @@ def build_query_sort_project(filters):
 
 
 
-def get_rents(typre_operations, conv, filters, page, rents_per_page):
+def get_rents(type_operations, conv, filters, page, rents_per_page):
     """
     Returns a cursor to a list of rental property documents.
 
@@ -72,15 +72,9 @@ def get_rents(typre_operations, conv, filters, page, rents_per_page):
 
     Returns 2 elements in a tuple: (properties, total_num_properties)
     """
-    if "rent" == typre_operations:
-        propertys = "rent_col"
-    elif "buy" == typre_operations:
-        propertys = "buy_col"
-    else:
-        rents = []
-        total_num_rents = 0
-        query = {}
-        return (rents, total_num_rents, query)
+    propertys = f_operation(type_operations)
+    if type(propertys) is not str:
+        return propertys
 
     query, sort, project = build_query_sort_project(filters)
 
@@ -112,15 +106,9 @@ def get_rent(type_operations, id):
     property embedded in the property document. The comments are joined from the
     comments collection using expressive $lookup.
     """
-    if "rent" == type_operations:
-        propertys = "rent_col"
-    elif "buy" == type_operations:
-        propertys = "buy_col"
-    else:
-        rents = []
-        total_num_rents = 0
-        query = {}
-        return (rents, total_num_rents, query)
+    propertys = f_operation(type_operations)
+    if type(propertys) is not str:
+        return propertys
     
     try:
         query = {"id": {"$in": id}}
@@ -140,14 +128,9 @@ def get_all(type_operations, conv, sort, page, rents_per_page):
     List all type of rents
     """
 
-    if "rent" == type_operations:
-        propertys = "rent_col"
-    elif "buy" == type_operations:
-        propertys = "buy_col"
-    else:
-        rents = []
-        total_num_rents = 0
-        return (rents, total_num_rents)
+    propertys = f_operation(type_operations)
+    if type(propertys) is not str:
+        return propertys
     
     cursor = db[propertys].find()
 
@@ -164,5 +147,31 @@ def get_all(type_operations, conv, sort, page, rents_per_page):
     else:
         rents = []
     rents = delete__id(rents)
+    query = {}
 
-    return (rents, total_num_rents)
+    return (rents, total_num_rents, query)
+
+
+def get_map_operation(type_operations):
+    """List all propertys to show in the map"""
+    propertys = f_operation(type_operations)
+    if type(propertys) is not str:
+        return propertys
+    
+    project = {
+        "id": 1,
+        "zone_name": 1,
+        "location.latitude": 1,
+        "location.longitude": 1,
+        "origin": 1,
+        "operation_type": 1,
+        "price": 1,
+        "currency": 1,
+        "_id": 0}
+    query = {}
+    rents = list(db[propertys].find(query,project))
+
+    total_num_rents = len(rents)
+    
+
+    return (rents, total_num_rents, project)

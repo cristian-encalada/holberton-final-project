@@ -1,7 +1,7 @@
 # from modules import modules
 from flask import abort, jsonify, make_response, request
 from modules.utils import is_int, chek_int, tex_none, sorting, conversion
-from modules.db import get_rents, get_all
+from modules.db import get_rents, get_all, get_map_operation
 from flasgger import Swagger
 from flasgger.utils import swag_from
 
@@ -23,7 +23,7 @@ def configure_routes(app):
 
         print(page)
 
-        (rents, total_num_entries) = get_all(
+        (rents, total_num_entries, query) = get_all(
             type_operations, conv, sort, page, rents_per_page=RENTS_PER_PAGE)
 
         response = {
@@ -80,4 +80,19 @@ def configure_routes(app):
             "total_results": total_num_entries,
         }
 
+        return jsonify(response)
+    
+    @app.route(api_prefix + '<type_operations>/mapa', methods=['GET'], strict_slashes=False)
+    @swag_from('documentation/rent/api_get_all_map.yml', methods=['GET'])
+    def api_get_map(type_operations):
+
+        (rents, total_num_entries, query) = get_map_operation(
+            type_operations)
+        
+        response = {
+            "rents": rents,
+            "filters": query,
+            "total_results": total_num_entries,
+        }
+        
         return jsonify(response)

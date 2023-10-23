@@ -1,5 +1,16 @@
 import re
 
+def f_operation(type_operations):
+    if "rent" == type_operations:
+        return "rent_col"
+    elif "buy" == type_operations:
+        return "buy_col"
+    else:
+        rents = []
+        total_num_rents = 0
+        query = {}
+        return (rents, total_num_rents, query)
+
 def f_currency(currency):
     """
     currency es un string,

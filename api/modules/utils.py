@@ -2,66 +2,72 @@ import requests
 
 
 def is_int(text):
-    """convierte un numero en string en un int positivo,
-    en caso contrario retorna None"""
+    """
+    Converts a string representation of a number into a positive integer. 
+    If the input is not a valid positive integer, it returns None.
+    """
     try:
-        input = int(text)
-        if input < 0:
-            input = 0
+        converted_number = int(text)
+        if converted_number < 0:
+            converted_number = 0
     except (ValueError, TypeError):
-        input = None
-    return input
+        converted_number = None
+    return converted_number
         
 
 def tex_none(text):
     """
-        separa varios nombes para formar una lista
+    Separates multiple names to form a list. If the input text is None, it returns None.
     """
     if text is None:
         return None
-    ret = [elemento for elemento in text.split(',') if elemento != ""]
-    return(ret)
+    separated_names = [element for element in text.split(',') if element != ""]
+    return separated_names
 
 
 def chek_int(text):
     """
-        separa una lista de numeros string(",") y evalua si son numeros,
-        de lo contrario devuelve una lista con valores numero y None, (revisar eso)
+    Extracts a list of string numbers (",") and validates whether they are indeed integers.
+    If a value is not a valid integer, it is replaced with None in the resulting list.
     """
-    numbers = tex_none(text)
-    if numbers:
-        ret = []
-        for num in numbers:
-            num = is_int(num)
-            ret.append(num)
-        numbers = ret
-    return numbers
+    numbers_list = tex_none(text)
+    if numbers_list:
+        validated_numbers = []
+        for number in numbers_list:
+            validated_number = is_int(number)
+            validated_numbers.append(validated_number)
+        numbers_list = validated_numbers
+    return numbers_list
 
 
 def sorting(text):
     """
-        crea un dicionario con los nombres de las columnas y el orden (asendente o desendente)
-        y lo prepara para el ordenamiento, si el valor no es valido no se crea el ordenamiento
+    Preprocesses sorting criteria for a list of columns and their corresponding orders (ascending 1 or descending -1).
+    Returns a dictionary with the column names as keys and the corresponding order as values.
+    If the input values are not valid, the sorting criteria for those values are not included in the dictionary.
     """
-    sorts = tex_none(text)
-    ret = {}
-    if sorts:
-        for s in sorts:
-            s = s.split(':')
-            if len(s) >= 2:
-                s[1] = is_int(s[1])
-                if s[1] is not None:
-                    if s[1] > 1:
-                        s[1] = 1
-                    if s[1] == 0:
-                        s[1] = -1
-                    ret[s[0]] = s[1]
-    return ret
+    column_order_pairs = tex_none(text)
+    sorting_criteria_dict = {}
+    if column_order_pairs:
+        for pair in column_order_pairs:
+            pair_elements = pair.split(':')
+            if len(pair_elements) >= 2:
+                order = is_int(pair_elements[1])
+                if order is not None:
+                    if order > 1:
+                        order = 1 # acendente (de menor a mayor)
+                    if order == 0:
+                        order = -1 # desendente (de mayor a menor)
+                    sorting_criteria_dict[pair_elements[0]] = order
+    return sorting_criteria_dict
 
 
 def conversion():
-    """return the conversion between two currencies"""
-    
+    """
+    Retrieves the currency conversion rate between two currencies.
+    In this case, the function fetches the conversion rate between USD and UYU.
+    If the API call fails, it returns a default value of 40 as a sample conversion rate.
+    """
     access_key = '108becf3bf3c99a76d9548282aa88dba51012e8b'
     base_currency = 'USD'
     target_currency = 'UYU'
@@ -74,6 +80,6 @@ def conversion():
         if conversion_data['status'] == 'success':
             converted_value = float(conversion_data['rates']['UYU']['rate'])
             return converted_value
-    print ("no mas consultas a la api convetion, valor de prueba: conv = 40")
+    print("No more API queries for conversion. Sample value: 40")
     return 40
-    #return None
+    # return None
