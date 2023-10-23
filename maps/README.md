@@ -55,3 +55,5 @@ https://geodata.ucdavis.edu/gadm/gadm4.1/json/gadm41_URY_0.json
 #### Tools
 
 https://www.freeconvert.com/jpg-to-svg/download
+
+https://developers.google.com/maps/documentation/places/web-service/place-id?hl=es-419

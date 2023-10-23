@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Map of Uruguay</title>
+    <style>
+        #map {
+            height: 100%;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+
+    function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 10,
+            center: { lat: -34.901112, lng: -56.164532 },
+            // center: {lat: 47.147583, lng: 2.420839}
+        });
+
+        var ctaLayer = new google.maps.KmlLayer({
+            url: 'https://raw.githubusercontent.com/cristian-encalada/Alquivago/maps/maps/GADM_data_Uruguay/gadm41_URY_0.kml',
+            map: map
+        });
+    }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDibwbhNlCUsjnrzfTC6xe_Ppaw6CvbkWI&callback=initMap">
+</script>
+</body>
+</html>
