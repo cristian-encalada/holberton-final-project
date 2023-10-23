@@ -2,12 +2,12 @@ async function initMap() {
   // Request needed libraries.
   const { Map } = await google.maps.importLibrary("maps");
   const map = new Map(document.getElementById("map"), {
-    center: { lat: -32.875, lng: -56.081 }, // Centered on Uruguay
-    // center: { lat: 40.76, lng: -101.64 },
+    //center: { lat: -32.875, lng: -56.081 }, // Centered on Uruguay
+    center: { lat: 40.76, lng: -101.64 },
     zoom: 5,
     // In the cloud console, configure this Map ID with a style that enables the
     // "Administrative Area Level 1" feature layer.
-    mapId: "7ba16be0c9375fa7",
+    mapId: "16aaecb986532f9a",
   });
   const featureLayer = map.getFeatureLayer(
     google.maps.FeatureType.ADMINISTRATIVE_AREA_LEVEL_1,

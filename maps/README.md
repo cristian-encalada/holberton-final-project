@@ -41,6 +41,11 @@ https://developers.google.com/maps/documentation/javascript/examples/boundaries-
 
 https://developers.google.com/maps/documentation/javascript/examples/boundaries-click
 
+https://cloud.google.com/blog/products/maps-platform/introducing-data-driven-styling
+
+https://storage.googleapis.com/gmp-maps-demos/data-driven-styling/index.html#intro-page
+
+
 #### GADM maps and data
 
 https://gadm.org/index.html
@@ -57,3 +62,12 @@ https://geodata.ucdavis.edu/gadm/gadm4.1/json/gadm41_URY_0.json
 https://www.freeconvert.com/jpg-to-svg/download
 
 https://developers.google.com/maps/documentation/places/web-service/place-id?hl=es-419
+
+https://cloud.google.com/maps-platform/terms/maps-prohibited-territories/
+
+https://console.cloud.google.com/google/maps-apis/studio/maps?project=soy-transducer-402817
+
+https://developers.google.com/maps/documentation/javascript/dds-boundaries/coverage
+
+
+https://www.youtube.com/watch?v=tAR63GBwk90&t=37s
