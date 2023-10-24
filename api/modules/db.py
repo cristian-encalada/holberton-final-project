@@ -1,5 +1,7 @@
 from modules.f_filters import f_operation, f_area, f_bathrooms, f_bedrooms, f_currency, f_price, f_types, f_zones
 from modules.sort_delete import sort_apply, delete__id
+import re
+
 from flask import current_app, g
 from werkzeug.local import LocalProxy
 from pymongo import MongoClient
@@ -147,7 +149,7 @@ def get_all(type_operations, conv, sort, page, rents_per_page):
     else:
         rents = []
     rents = delete__id(rents)
-    query = {}
+    query = {}#eliminar
 
     return (rents, total_num_rents, query)
 
@@ -168,10 +170,34 @@ def get_map_operation(type_operations):
         "price": 1,
         "currency": 1,
         "_id": 0}
-    query = {}
+    query = {} #eliminar
     rents = list(db[propertys].find(query,project))
 
     total_num_rents = len(rents)
     
 
     return (rents, total_num_rents, project)
+
+
+def get_cont_zone(type_operations):
+    """cont all the properties in all zones"""
+
+    propertys = f_operation(type_operations)
+    if type(propertys) is not str:
+        return propertys
+    
+    project = {
+        "zona": 1,
+        "_id": 0}
+    query = {}
+    all_zones = list(db.zonas_mvd_col.find(query,project))
+
+    cont = 0
+    for zone in all_zones:
+        escaped_zones = re.escape(zone["zona"])
+        zone["cantidad"] = db[propertys].count_documents({"zone_name": {"$regex": escaped_zones, "$options": "i"}})
+        cont += zone["cantidad"]
+
+    total_num_rents = 0 #eliminar
+
+    return (all_zones, total_num_rents, cont)
