@@ -1,6 +1,8 @@
-# Alquivago
+# alquivago
 
-__Alquivago__ is a website that compares house/apartment rental prices from multiple rent websites in Montevideo - Uruguay.
+![Alquivago - Logo](https://github.com/cristian-encalada/Alquivago/blob/demo-utils/logo/alquivago_logo_v1-enhanced.png?raw=true)
+
+__alquivago__ is a website that compares `long-term` house/apartment `rental prices` from multiple rent websites in Montevideo - Uruguay.
 
 ## Table of contents
 
@@ -93,7 +95,7 @@ AlquiVago is only in charge of __listing and filtering all the available rental 
 
 ## Architecture
 
-[Alquivago - MVC Architecture](https://github.com/cristian-encalada/Alquivago/blob/demo-utils/archtecture_diagram/Alquivago_MVC_diagram.png?raw=true)
+![Alquivago - MVC Architecture](https://github.com/cristian-encalada/Alquivago/blob/demo-utils/archtecture_diagram/Alquivago_MVC_diagram.png?raw=true)
 
 This project uses a MVC (Model-View-Controller) Architecture.
 
