@@ -7,52 +7,154 @@ parameters:
     in: path
     type: string
     required: true
-    description: Type of operations (e.g., rent, buy)
+    description: Type of operations (allowed values - [rent, buy])
   - name: page
     in: query
     type: integer
     required: false
-    description: Page number for paginating results
+    description: |
+      Page number for paginating results 
+      Allowed values: integer
   - name: tipos
     in: query
     type: string
     required: false
-    description: Types filter
+    description: |
+      Property types filter
+      Allowed values: 
+        - 0: Apartamento
+        - 1: Local Comercial
+        - 2: Local
+        - 3: Oficina
+        - 4: Casa
+        - 5: Terreno
+        - 6: Campo
+        - 7: Garage
+        - 8: Cochera
+        - 9: Otro
   - name: zonas
     in: query
     type: string
     required: false
-    description: Zones filter
+    description: |
+      Zones filter
+      Allowed values: 
+        - 1: Ciudad Vieja
+        - 2: Centro
+        - 3: Barrio Sur
+        - 4: Cordón
+        - 5: Palermo
+        - 6: Parque Rodó
+        - 7: Punta Carretas
+        - 8: Pocitos
+        - 9: Buceo
+        - 10: Parque Batlle
+        - 11: Malvín
+        - 12: Malvín Norte
+        - 13: Punta Gorda
+        - 14: Carrasco
+        - 15: Carrasco Norte
+        - 16: Bañados de Carrasco
+        - 17: Maroñas
+        - 18: Flor de Maroñas
+        - 19: Las Canteras
+        - 20: Punta de Rieles
+        - 21: Jardines del Hipódromo
+        - 22: Ituzaingó
+        - 23: Unión
+        - 24: Villa Española
+        - 25: Mercado Modelo
+        - 26: Castro
+        - 27: Cerrito de la Victoria
+        - 28: Las Acacias
+        - 29: Aires Puros
+        - 30: Casavalle
+        - 31: Piedras Blancas
+        - 32: Manga
+        - 33: Paso de las Duranas
+        - 34: Peñarol
+        - 35: Villa del Cerro
+        - 36: Casabó
+        - 37: La Paloma
+        - 38: La Teja
+        - 39: Prado
+        - 40: Capurro
+        - 41: Aguada
+        - 42: Reducto
+        - 43: Atahualpa
+        - 44: Jacinto Vera
+        - 45: La Figurita
+        - 46: Larrañaga
+        - 47: La Blanqueada
+        - 48: Villa Muñoz
+        - 49: La Comercial
+        - 50: Tres Cruces
+        - 51: Brazo Oriental
+        - 52: Sayago
+        - 53: Conciliación
+        - 54: Belvedere
+        - 55: Nuevo París
+        - 56: Tres Ombúes
+        - 57: Paso de la Arena
+        - 58: Colón Sureste
+        - 59: Colón Centro y Noroeste
+        - 60: Lezica
+        - 61: Villa García
+        - 62: Manga
   - name: dormitorios
     in: query
-    type: integer
+    type: string
     required: false
-    description: Bedrooms filter
+    description: |
+      Bedrooms filter
+      Allowed values: 
+        Unique value: Integer [1 to 4] 4 is for 3 or more than 4 bedrooms
+        Multivalue: Integers separated by commas
   - name: baños
     in: query
-    type: integer
+    type: string
     required: false
-    description: Bathrooms filter
+    description: |
+      Bathrooms filter
+      Allowed values:  [1 to 3] - 3 is for 3 or more than 3 bathrooms
+        Unique value: Integer
+        Multivalue: Integers separated by commas
   - name: orden
     in: query
     type: string
     required: false
-    description: Sorting order
+    description: |
+      Sorting order - Cases:
+        price descendant order: price:-1 (or any other negative value)
+        price ascendant order: price:1 (or any other positive value)
+        area descendant order: area:-1 (or any other negative value)
+        area ascendant order: area:1 (or any other positive value)
+        combined price and area: price:1,area:-1 (price asc, area desc)
   - name: moneda
     in: query
     type: string
     required: false
-    description: Currency filter
+    description:  |
+      Currency filter
+      Allowed values:
+        USD
+        UYU
   - name: min_max
     in: query
     type: string
     required: false
-    description: Price range filter
+    description: |
+      Price range filter
+      Allowed values:
+        integer,integer (min_value,max_value)
   - name: area
     in: query
     type: string
     required: false
-    description: Area range filter
+    description: |
+      Area range filter
+      Allowed values:
+          integer,integer (min_value,max_value)
 responses:
   200:
     description: Successful request
@@ -80,7 +182,6 @@ responses:
               name:
                 type: string
                 description: City name
-              # Add other properties as needed
         page:
           type: integer
           description: Current page number
