@@ -21,6 +21,9 @@ __Alquivago__ is a website that compares house/apartment rental prices from mult
     - [Prerequisites](#prerequisites)
     - [Run docker compose](#run-docker-compose)
 - [Architecture](#architecture)
+    - [Model](#model)
+    - [View](#view)
+    - [Controller](#controller)
 - [Technologies and Tools](#technologies)
     - [Frontend](#frontend)
     - [Backend](#backend)
@@ -63,14 +66,23 @@ AlquiVago is only in charge of __listing and filtering all the available rental 
 
 [Frontend - User Interface](https://alquivago.vercel.app/)
 
+
+![Frontend - User Interface](https://github.com/cristian-encalada/Alquivago/blob/demo-utils/live-demo/frontend_demo.png?raw=true)
+
 ### Backend - Internal API
 
 [Backend - Internal API](https://alquivago-flask-apis.vercel.app/apidocs)
 
 
+![Backend - Internal API](https://github.com/cristian-encalada/Alquivago/blob/demo-utils/live-demo/backend_demo.png?raw=true)
+
+
 ### Map View
 
 [Map View](https://cristian-encalada.github.io/Alquivago/)
+
+
+![Map View](https://github.com/cristian-encalada/Alquivago/blob/demo-utils/live-demo/map_view_demo.png?raw=true)
 
 
 ## Run in local environment
@@ -81,21 +93,70 @@ AlquiVago is only in charge of __listing and filtering all the available rental 
 
 ## Architecture
 
-## Technologies
+[Alquivago - MVC Architecture](https://github.com/cristian-encalada/Alquivago/blob/demo-utils/archtecture_diagram/Alquivago_MVC_diagram.png?raw=true)
+
+This project uses a MVC (Model-View-Controller) Architecture.
+
+### Model:
+
+This represents the application's data and the __business logic for manipulating that data__. 
+
+In the actual project context, the Model layer would include the code responsible for interacting with your NoSQL MongoDB database. It handles tasks such as data retrieval, storage, validation, and manipulation. It's where we define the structure of the data, such as schemas for the MongoDB collections.
+
+### View
+
+The View layer is responsible for __presenting data to the user__. In a web application, this typically includes HTML templates or components that render the user interface. 
+
+In our case, as we use React on the frontend, the React components belong to the View category.
+
+### Controller
+
+The Controller acts as an __intermediary between the Model and the View__. It receives requests from the client, processes them, interacts with the Model to retrieve or modify data, and then sends the appropriate response back to the client. 
+
+In this project, on the Flask application, the Flask routes (API endpoints) and associated functions would act as controllers. They handle incoming HTTP requests, call the necessary Model methods to perform operations on the data, and return responses,  in the form of JSON for a RESTful API.
+
+## Technologies and Tools
 
 ### Frontend
+
+- __Figma__ - Design tool 
+- __Vite__ - Frontend tool 
+- __React__ - Front-end JavaScript library
+- __Tailwind CSS__ - CSS framework
+
 ### Backend
+
+- __Flask__ - Python Framework
+
 ### Database
+
+- __MongoDB__ - No SQL database
+
 ### Web Scraping
+
+- __Selenium__ - Browser automation tool
+- __BeautifulSoup__ - Python library
+
 ### Deployment
+
+- __Vercel__ - Vite/React app and Flask API
+- __Github Pages__ - Map View
+- __Atlas__ - Mongo DB
+
 ### Other tools
+
+- __Trello__ - Tasks tracking and project management
+    - ([Trello Board URL](https://trello.com/b/9ktgFcQo/holberton-final-project-alquivago))
+- __Apache Airflow__ - Automate scraping process
+- __Github Actions__ - Automate Dockerhub upload process
+- __Docker__ - Local Environment
 
 ## Future Improvements
 
 ## Authors
 
-- [Cristian Enalada](https://github.com/cristian-encalada)
+- [Cristian Encalada](https://github.com/cristian-encalada)
 - [Gabriel Delgado](https://github.com/Gabr1el20)
 - [Martin Leiro](https://github.com/hentype85)
 - [Emiliano Garin](https://github.com/EmilianoGarin)
-- [Alejndro Martinez](https://github.com/alemao51092)
+- [Alejandro Martinez](https://github.com/alemao51092)
