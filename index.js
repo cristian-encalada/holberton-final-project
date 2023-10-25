@@ -4,7 +4,6 @@ async function initMap() {
   const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary(
     "marker",
   );
-  const { Place } = await google.maps.importLibrary("places");
   const map = new Map(document.getElementById("map"), {
     center: { lat: -34.901112, lng: -56.164532 },
     zoom: 14,
@@ -12,6 +11,22 @@ async function initMap() {
   });
 
   let markers = []; // Store created markers in an array
+
+  const createRedCircleMarker = (position) => {
+    // A marker with a custom inline SVG for the red circle icon.
+    const redCircleSvgString = '<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="red" /></svg>';
+    const redCircleSvg = new DOMParser().parseFromString(redCircleSvgString, "image/svg+xml").documentElement;
+
+    // Create a marker with the red circle icon
+    const marker = new AdvancedMarkerElement({
+      map,
+      position,
+      content: redCircleSvg,
+      title: "Red Circle Marker",
+    });
+
+    markers.push(marker); // Store the created marker in the array
+  };
 
   const handleZoomChange = () => {
     const zoom = map.getZoom();
@@ -90,6 +105,23 @@ async function initMap() {
                 infoWindow.open(map, marker);
 
                 markers.push(marker); // Store the created marker in the array
+              }
+            });
+          }
+        });
+    } else if (zoom < 14) {
+      // Fetch data from the API endpoint when zoom is less than 14
+      fetch("https://alquivago-flask-apis.vercel.app/api/v1/rent/mapa")
+        .then((response) => response.json())
+        .then((data) => {
+          if (data && data.rents && Array.isArray(data.rents)) {
+            data.rents.forEach((rent) => {
+              if (rent.location && rent.location.latitude && rent.location.longitude) {
+                // Create a red circle marker for each item
+                createRedCircleMarker({
+                  lat: rent.location.latitude,
+                  lng: rent.location.longitude,
+                });
               }
             });
           }
