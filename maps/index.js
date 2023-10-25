@@ -66,8 +66,8 @@ async function initMap() {
                 }
 
                 glyphImg.src = iconSrc;
-                glyphImg.width = 20;
-                glyphImg.height = 20;
+                glyphImg.width = 36;
+                glyphImg.height = 36;
 
                 // Create a marker with the determined icon source
                 const glyphSvgPinElement = new PinElement({

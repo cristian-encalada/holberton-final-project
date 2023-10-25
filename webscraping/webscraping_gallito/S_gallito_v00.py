@@ -113,11 +113,10 @@ for i in range(2):
             elementos = driver.find_elements(By.XPATH, '//div[@id="div_datosOperacion"]/div//p')
             for e in elementos:
                 lst_e = e.text.split()
-                print(lst_e)
                 if 'Baños' in lst_e:
-                    banos = lst_e[1]
+                    banos = lst_e[0]
                 elif 'Mts' in lst_e:
-                    metros = lst_e[1]
+                    metros = lst_e[0]
         except Exception:
             banos = 0
             metros = 0
