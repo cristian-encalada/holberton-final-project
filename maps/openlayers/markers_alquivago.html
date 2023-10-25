@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Map with Markers</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/openlayers/2.13.1/OpenLayers.js"></script>
+  </head>
+  <body>
+    <div id="mapdiv" style="width: 100%; height: 500px;"></div>
+    <script>
+      var map = new OpenLayers.Map("mapdiv");
+      map.addLayer(new OpenLayers.Layer.OSM());
+
+      var zoom = 12;
+      map.setCenter(new OpenLayers.LonLat(-56.1118606, -34.8829939).transform(
+        new OpenLayers.Projection("EPSG:4326"),
+        map.getProjectionObject()
+      ), zoom);
+
+      // Make an HTTP request to the API
+      var apiUrl = 'https://alquivago-flask-apis.vercel.app/api/v1/rent/inmuebles';
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', apiUrl, true);
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          var response = JSON.parse(xhr.responseText);
+
+          // Iterate through the rents and add markers for each valid location
+          for (var i = 0; i < response.rents.length; i++) {
+            var rent = response.rents[i];
+            var latitude = rent.location.latitude;
+            var longitude = rent.location.longitude;
+
+            // Check for valid latitude and longitude
+            if (latitude && longitude) {
+              var lonLat = new OpenLayers.LonLat(longitude, latitude).transform(
+                new OpenLayers.Projection("EPSG:4326"),
+                map.getProjectionObject()
+              );
+
+              // Create a marker and add it to the map
+              var marker = new OpenLayers.Marker(lonLat);
+              var markers = new OpenLayers.Layer.Markers("Markers");
+              markers.addMarker(marker);
+              map.addLayer(markers);
+            }
+          }
+        }
+      };
+      xhr.send(null);
+    </script>
+  </body>
+</html>
