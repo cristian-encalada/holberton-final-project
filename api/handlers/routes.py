@@ -1,7 +1,7 @@
 # from modules import modules
 from flask import abort, jsonify, make_response, request
 from modules.utils import is_int, chek_int, tex_none, sorting, conversion
-from modules.db import get_rents, get_all, get_map_operation, get_cont_zone
+from modules.db import get_rents, get_all, get_map_operation, get_cont_zone, get_conteo_municipio
 from flasgger import Swagger
 from flasgger.utils import swag_from
 
@@ -82,12 +82,14 @@ def configure_routes(app):
 
         return jsonify(response)
     
-    @app.route(api_prefix + '<type_operations>/mapa', methods=['GET'], strict_slashes=False)
+    @app.route(api_prefix + '<type_operations>/mapa/<list_zone>', methods=['GET'], strict_slashes=False)
     @swag_from('documentation/rent/api_get_all_map.yml', methods=['GET'])
-    def api_get_map(type_operations):
+    def api_get_map(type_operations, list_zone):
+
+        zones = chek_int(list_zone)
 
         (rents, total_num_entries, query) = get_map_operation(
-            type_operations)
+            type_operations, zones)
         
         response = {
             "rents": rents,
@@ -102,6 +104,21 @@ def configure_routes(app):
     def get_cont_zones(type_operations):
 
         (rents, total_num_entries, query) = get_cont_zone(
+            type_operations)
+        
+        response = {
+            "rents": rents,
+            "filters": query,
+            "total_results": total_num_entries,
+        }
+        
+        return jsonify(response)
+    
+    @app.route(api_prefix + '<type_operations>/conteo_municipio', methods=['GET'], strict_slashes=False)
+    @swag_from('documentation/rent/api_get_cont_municipios.yml', methods=['GET'])
+    def get_cont_municipios(type_operations):
+
+        (rents, total_num_entries, query) = get_conteo_municipio(
             type_operations)
         
         response = {

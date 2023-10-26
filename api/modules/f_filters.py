@@ -30,12 +30,6 @@ def f_types(types):
     """
     from modules.db import db
     
-    """property_types = list(db.property_types_col.find({"property_types": {"$exists": True}}))
-    property_types = property_types[0]['property_types']
-    print(types)
-    print(property_types)
-    result = [doc['name'] for doc in property_types if doc['id'] in types]"""
-    
     result = [doc["name"] for doc in db.property_types_col.find({"id": {"$in": types}}, {"name": 1, "_id": 0})]
 
 
@@ -44,8 +38,8 @@ def f_types(types):
 
 def f_zones(zones):
     """
-    zones es una lista de strigs, sin normalisar por completo
-    ["no_normalisado"(none), "normalisado", ...],
+    zones es una lista de int, normalizados en la coleccion zonas_mvd_col
+    [num, ...],
     retorno un diccionario con la consulta
     """
     
@@ -55,6 +49,18 @@ def f_zones(zones):
 
     escaped_zones = [re.escape(zone) for zone in result]
     regex_pattern = "|".join(escaped_zones)
+    return({"zone_name": {"$regex": regex_pattern, "$options": "i"}})# "i" para que sea insensible a mayúsculas/minúsculas
+
+
+def f_cities(cities):
+    """
+    cities es una lista de strigs, sin normalisar por completo
+    ["no_normalisado"(none), "normalisado", ...],
+    retorno un diccionario con la consulta
+    """
+
+    escaped_cities = [re.escape(city) for city in cities]
+    regex_pattern = "|".join(escaped_cities)
     return({"zone_name": {"$regex": regex_pattern, "$options": "i"}})# "i" para que sea insensible a mayúsculas/minúsculas
 
 

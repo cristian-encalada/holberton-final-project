@@ -102,29 +102,6 @@ def get_rents(type_operations, conv, filters, page, rents_per_page):
     return (rents, total_num_rents, query)
 
 
-def get_rent(type_operations, id):
-    """
-    Given a rental property ID, return a property with that ID, with the comments for that
-    property embedded in the property document. The comments are joined from the
-    comments collection using expressive $lookup.
-    """
-    propertys = f_operation(type_operations)
-    if type(propertys) is not str:
-        return propertys
-    
-    try:
-        query = {"id": {"$in": id}}
-
-        rents = db[propertys].find(query)
-
-        return (list(rents))
-    except StopIteration:
-        return None
-
-    except Exception as e:
-        return {}
-
-
 def get_all(type_operations, conv, sort, page, rents_per_page):
     """
     List all type of rents
@@ -154,7 +131,7 @@ def get_all(type_operations, conv, sort, page, rents_per_page):
     return (rents, total_num_rents, query)
 
 
-def get_map_operation(type_operations):
+def get_map_operation(type_operations, zones):
     """List all propertys to show in the map"""
     propertys = f_operation(type_operations)
     if type(propertys) is not str:
@@ -162,6 +139,7 @@ def get_map_operation(type_operations):
     
     project = {
         "id": 1,
+        "url_link": 1,
         "zone_name": 1,
         "location.latitude": 1,
         "location.longitude": 1,
@@ -170,13 +148,13 @@ def get_map_operation(type_operations):
         "price": 1,
         "currency": 1,
         "_id": 0}
-    query = {} #eliminar
+    query = f_zones(zones)
     rents = list(db[propertys].find(query,project))
 
     total_num_rents = len(rents)
     
 
-    return (rents, total_num_rents, project)
+    return (rents, total_num_rents, query)
 
 
 def get_cont_zone(type_operations):
@@ -201,3 +179,37 @@ def get_cont_zone(type_operations):
     total_num_rents = 0 #eliminar
 
     return (all_zones, total_num_rents, cont)
+
+
+def get_conteo_municipio(type_operations):
+    """cont all the properties in all zones"""
+
+    propertys = f_operation(type_operations)
+    if type(propertys) is not str:
+        return propertys
+    
+    project = {
+        "zona": 1,
+        "_id": 0}
+    municipios = ["A", "B", "C", "CH", "D", "E", "F", "G"]
+    escaped_municipios = [re.escape(municipio) for municipio in municipios]
+    
+    all_municipios = {}
+    for municipio in escaped_municipios:
+        query = {"municipio": {"$regex": municipio, "$options": "i"}}# "i" para que sea insensible a mayúsculas/minúsculas
+        all_municipios[municipio] = list(db.zonas_mvd_col.find(query,project))
+
+    cont = 0
+    result = []
+    for municipio, list_zone in all_municipios.items():
+        res = {}
+        escaped_zones = [re.escape(zone["zona"]) for zone in list_zone]
+        regex_pattern = "|".join(escaped_zones)
+        res["cantidad"] = db[propertys].count_documents({"zone_name": {"$regex": regex_pattern, "$options": "i"}})
+        res["municipio"] = municipio
+        cont += res["cantidad"]
+        result.append(res)
+
+    total_num_rents = 0 #eliminar
+
+    return (result, total_num_rents, cont)

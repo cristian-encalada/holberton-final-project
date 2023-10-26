@@ -21,7 +21,7 @@ def tex_none(text):
     """
     if text is None:
         return None
-    separated_names = [element for element in text.split(',') if element != ""]
+    separated_names = text.split(',')
     return separated_names
 
 
