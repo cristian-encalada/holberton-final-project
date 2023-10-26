@@ -67,6 +67,12 @@ lst_data = []
 # capturar en rango desde la pagina 0 hasta la que determine range()
 for i in range(2):
 
+    if i > 0:
+        # se crea url cambiando el ultimo char de la url
+        custom_url_avanzando = f"{custom_avanzar[:-1]}{i + 1}"
+        driver.get(custom_url_avanzando)
+        time.sleep(2)
+    
     # captura la lista de elementos de alquiler
     lst_alquiler = driver.find_elements(By.XPATH, '//div[3]/div[1]/div/div[1]/a')
 
@@ -79,9 +85,10 @@ for i in range(2):
     # abre cada uno de los url de alquileres
     for j, url_alquiler in enumerate(urls_alquiler):
 
-        # abrir enlace
         driver.get(url_alquiler)
         time.sleep(2)
+
+        print(f"pagina: {i} alquiler: {j}")
 
         # capturar informacion de url abierta
         try:
@@ -110,13 +117,15 @@ for i in range(2):
         except:
             tipo_propiedad = ""
         try:
-            banos = driver.find_element(By.XPATH, '//div[@id="div_datosOperacion"]/div[5]/p').text.split()[0]
+            elementos = driver.find_elements(By.XPATH, '//div[@id="div_datosOperacion"]/div//p')
+            for e in elementos:
+                lst_e = e.text.split()
+                if 'Baños' in lst_e:
+                    banos = lst_e[0]
+                elif 'Mts' in lst_e:
+                    metros = lst_e[0]
         except Exception:
             banos = 0
-            pass
-        try:
-            metros = driver.find_element(By.XPATH, '//div[@id="div_datosOperacion"]/div[6]/p').text.split()[0]
-        except Exception:
             metros = 0
             pass
         try:
@@ -173,15 +182,14 @@ for i in range(2):
         except Exception:
             pass
 
-        # back() volver
+        # abrir enlace
         if i == 0:
-            # pagina 0 de alquileres
+            # volver pagina 0 de alquileres
             driver.get(selecDepart)
         else:
-            # se crea url cambiando el ultimo char de la url
-            custom_url_avanzando = f"{custom_avanzar[:-1]}{i + 1}"
+            # volver pagina distinta a 0
             driver.get(custom_url_avanzando)
-       
+
         time.sleep(2)
 
 #---------------------------------------------------------------
