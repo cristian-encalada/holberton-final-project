@@ -12,9 +12,9 @@ rent_col = db["rent_col"]
 
 # URLs of the JSON files on GitHub
 github_urls = [
-    "https://raw.githubusercontent.com/cristian-encalada/Alquivago/dev/data/gallito.json",
-    "https://raw.githubusercontent.com/cristian-encalada/Alquivago/dev/data/infocasas.json",
-    "https://raw.githubusercontent.com/cristian-encalada/Alquivago/dev/data/mercadolibre.json",
+    "https://raw.githubusercontent.com/cristian-encalada/Alquivago/main/data/gallito.json",
+    "https://raw.githubusercontent.com/cristian-encalada/Alquivago/main/data/infocasas.json",
+    "https://raw.githubusercontent.com/cristian-encalada/Alquivago/main/data/mercadolibre.json",
 ]
 
 data = []
