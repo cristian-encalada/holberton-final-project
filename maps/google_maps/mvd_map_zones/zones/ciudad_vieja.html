@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Highlight Montevideo City, Uruguay</title>
+    <title>Highlight Ciudad Vieja,  Montevideo, Uruguay</title>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDibwbhNlCUsjnrzfTC6xe_Ppaw6CvbkWI&libraries=drawing"></script>
     <style>
         #map {
-            height: 400px;
+            height: 800px;
             width: 100%;
         }
     </style>
@@ -16,19 +16,24 @@
     <script>
         function initMap() {
             var map = new google.maps.Map(document.getElementById('map'), {
-                center: { lat: -34.8949581, lng: -56.16864039999999 },
+                center: { lat: -34.9080, lng: -56.2063 },
                 zoom: 15
             });
 
-            var tresCrucesCoordinates = [
-                { lat: -34.8863006, lng: -56.1588478 },
-                { lat: -34.902158, lng: -56.1714649 },
-                { lat: -34.8863006, lng: -56.1714649 },
-                { lat: -34.902158, lng: -56.1588478 }
+            var ciudadViejaCoordinates = [
+                { lat: -34.910648, lng: -56.200458 },
+                { lat: -34.910211, lng: -56.204658 },
+                { lat: -34.911703, lng: -56.210773 },
+                { lat: -34.909839, lng: -56.214195 },
+                { lat: -34.906343, lng: -56.215283 },
+                { lat: -34.901569, lng: -56.202808 },
+                { lat: -34.905723, lng: -56.201064 },
+                { lat: -34.908468, lng: -56.200126 },
+                { lat: -34.910648, lng: -56.200458 }
             ];
 
             var tresCrucesPolygon = new google.maps.Polygon({
-                paths: tresCrucesCoordinates,
+                paths: ciudadViejaCoordinates,
                 strokeColor: '#FF0000',
                 strokeOpacity: 0.8,
                 strokeWeight: 2,
