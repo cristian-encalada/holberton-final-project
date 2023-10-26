@@ -40,7 +40,7 @@ async function initMap() {
 
     if (zoom >= 14) {
       // Fetch data from the API endpoint
-      fetch("https://alquivago-flask-apis.vercel.app/api/v1/rent/mapa")
+      fetch("https://alquivago-flask-apis.vercel.app/api/v1/rent/mapa/todo")
         .then((response) => response.json())
         .then((data) => {
           if (data && data.rents && Array.isArray(data.rents)) {
@@ -111,7 +111,7 @@ async function initMap() {
         });
     } else if (zoom < 14) {
       // Fetch data from the API endpoint when zoom is less than 14
-      fetch("https://alquivago-flask-apis.vercel.app/api/v1/rent/mapa")
+      fetch("https://alquivago-flask-apis.vercel.app/api/v1/rent/mapa/todo")
         .then((response) => response.json())
         .then((data) => {
           if (data && data.rents && Array.isArray(data.rents)) {

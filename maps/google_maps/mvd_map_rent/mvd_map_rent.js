@@ -15,7 +15,7 @@ async function initMap() {
   const iconSize = { width: 32, height: 32 };
 
   // Fetch data from the API endpoint
-  const response = await fetch("https://alquivago-flask-apis.vercel.app/api/v1/rent/mapa");
+  const response = await fetch("https://alquivago-flask-apis.vercel.app/api/v1/rent/mapa/todo");
   const data = await response.json();
 
   if (data && data.rents && Array.isArray(data.rents)) {
