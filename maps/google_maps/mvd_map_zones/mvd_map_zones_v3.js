@@ -35,7 +35,7 @@ async function initMap() {
 async function addPolygon(map, coordinates, name, apiData) {
   const polygon = new google.maps.Polygon({
     paths: coordinates,
-    strokeColor: '#FF0000',
+    strokeColor: '#0000FF',
     strokeOpacity: 0.8,
     strokeWeight: 2,
     fillColor: 'transparent',
@@ -54,7 +54,7 @@ async function addPolygon(map, coordinates, name, apiData) {
 
   // Add mouseover event listener
   polygon.addListener('mouseover', async function() {
-    polygon.setOptions({ fillColor: '#FF0000' });
+    polygon.setOptions({ fillColor: '#0000FF' });
 
     // Find the data for the current zone from the API response
     const zoneData = apiData.rents.find(rent => rent.zona === name);
