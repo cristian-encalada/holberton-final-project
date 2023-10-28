@@ -1,4 +1,4 @@
-get all rents on map
+get all map
 ---
 tags:
   - Rents
@@ -8,16 +8,11 @@ parameters:
     type: string
     required: true
     description: Type of operations (e.g., rent, buy)
-  - name: page
-    in: query
-    type: integer
-    required: false
-    description: Page number for paginating results
-  - name: orden
-    in: query
+  - name: list_zone
+    in: path
     type: string
     required: false
-    description: Sorting order
+    description: List of zones (e.g., 1,2)
 responses:
   200:
     description: Successful request
@@ -40,15 +35,9 @@ responses:
                 type: string
                 description: The uuid of the instance
               # Add other properties as needed
-        page:
-          type: integer
-          description: Current page number
         filters:
           type: object
           description: Filters applied to the request
-        entries_per_page:
-          type: integer
-          description: Number of entries per page
         total_results:
           type: integer
           description: Total number of results

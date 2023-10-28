@@ -1,6 +1,7 @@
 import requests
 
 
+
 def is_int(text):
     """
     Converts a string representation of a number into a positive integer. 
@@ -15,13 +16,13 @@ def is_int(text):
     return converted_number
         
 
-def tex_none(text):
+def tex_none(text, split):
     """
     Separates multiple names to form a list. If the input text is None, it returns None.
     """
     if text is None:
         return None
-    separated_names = text.split(',')
+    separated_names = text.split(split)
     return separated_names
 
 
@@ -30,7 +31,7 @@ def chek_int(text):
     Extracts a list of string numbers (",") and validates whether they are indeed integers.
     If a value is not a valid integer, it is replaced with None in the resulting list.
     """
-    numbers_list = tex_none(text)
+    numbers_list = tex_none(text, ',')
     if numbers_list:
         validated_numbers = []
         for number in numbers_list:
@@ -46,7 +47,7 @@ def sorting(text):
     Returns a dictionary with the column names as keys and the corresponding order as values.
     If the input values are not valid, the sorting criteria for those values are not included in the dictionary.
     """
-    column_order_pairs = tex_none(text)
+    column_order_pairs = tex_none(text, ',')
     sorting_criteria_dict = {}
     if column_order_pairs:
         for pair in column_order_pairs:

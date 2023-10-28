@@ -82,11 +82,15 @@ def configure_routes(app):
 
         return jsonify(response)
     
+    @app.route(api_prefix + '<type_operations>/mapa/', defaults={'list_zone': None}, methods=['GET'], strict_slashes=False)
     @app.route(api_prefix + '<type_operations>/mapa/<list_zone>', methods=['GET'], strict_slashes=False)
     @swag_from('documentation/rent/api_get_all_map.yml', methods=['GET'])
     def api_get_map(type_operations, list_zone):
 
-        zones = chek_int(list_zone)
+        if list_zone is None:
+            zones = []
+        else:
+            zones = chek_int(list_zone)
 
         (rents, total_num_entries, query) = get_map_operation(
             type_operations, zones)
@@ -128,3 +132,4 @@ def configure_routes(app):
         }
         
         return jsonify(response)
+    
