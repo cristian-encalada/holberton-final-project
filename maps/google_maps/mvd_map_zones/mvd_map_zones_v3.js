@@ -60,7 +60,7 @@ async function addPolygon(map, coordinates, name, apiData) {
     const zoneData = apiData.rents.find(rent => rent.zona === name);
 
     if (zoneData) {
-      infoWindow.setContent(`${name}<br>Number of rents: ${zoneData.cantidad}`);
+      infoWindow.setContent(`${name}<br>Alquileres: ${zoneData.cantidad}`);
     } else {
       infoWindow.setContent(name);
     }

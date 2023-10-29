@@ -344,7 +344,7 @@
       },
       {
           "id": 58,
-          "zona": "Colón Sureste",
+          "zona": "Colón Sudeste",
           "centro comunal zonal": "12",
           "municipio": "G"
       },
@@ -371,6 +371,114 @@
           "zona": "Manga",
           "centro comunal zonal": "9",
           "municipio": "F"
-      }
+      },
+      {
+        "id": 63,
+        "zona": "Villa Dolores",
+        "centro comunal zonal": "4 y 5",
+        "municipio": "CH"
+    },
+    {
+        "id": 64,
+        "zona": "Parque Guaraní",
+        "centro comunal zonal": "9",
+        "municipio": "F"
+    },
+    {
+        "id": 65,
+        "zona": "Bella Italia",
+        "centro comunal zonal": "9",
+        "municipio": "F"
+    },
+    {
+        "id": 66,
+        "zona": "Bolívar",
+        "centro comunal zonal": "3 y 11",
+        "municipio": "C y D"
+    },
+    {
+        "id": 67,
+        "zona": "Marconi",
+        "centro comunal zonal": "11",
+        "municipio": "D"
+    },
+    {
+        "id": 68,
+        "zona": "Toledo Chico",
+        "centro comunal zonal": "10",
+        "municipio": "D"
+    },
+    {
+        "id": 69,
+        "zona": "Lavalleja",
+        "centro comunal zonal": "13",
+        "municipio": "G"
+    },
+    {
+        "id": 70,
+        "zona": "Pajas Blancas",
+        "centro comunal zonal": "17",
+        "municipio": "A"
+    },
+    {
+        "id": 71,
+        "zona": "Tomkinson",
+        "centro comunal zonal": "17",
+        "municipio": "A"
+    },
+    {
+        "id": 72,
+        "zona": "Nueva Savona",
+        "centro comunal zonal": "15 y 16",
+        "municipio": "A y C"
+    },
+    {
+        "id": 73,
+        "zona": "Bella Vista",
+        "centro comunal zonal": "16",
+        "municipio": "C"
+    },
+    {
+        "id": 74,
+        "zona": "Arroyo Seco",
+        "centro comunal zonal": "16",
+        "municipio": "C"
+    },
+    {
+        "id": 75,
+        "zona": "Retiro",
+        "centro comunal zonal": "3",
+        "municipio": "B y C"
+    },
+    {
+        "id": 76,
+        "zona": "Goes",
+        "centro comunal zonal": "3",
+        "municipio": "B y C"
+    },
+    {
+        "id": 77,
+        "zona": "Paso Molino",
+        "centro comunal zonal": "13 y 14",
+        "municipio": "A y G"
+    },
+    {
+        "id": 78,
+        "zona": "Pueblo Victoria",
+        "centro comunal zonal": "14",
+        "municipio": "A"
+    },
+    {
+        "id": 79,
+        "zona": "Santiago Vázquez",
+        "centro comunal zonal": "18",
+        "municipio": "A"
+    },
+    {
+        "id": 80,
+        "zona": "Abayubá",
+        "centro comunal zonal": "12",
+        "municipio": "G"
+    }
   ]
 }
