@@ -2,8 +2,10 @@ async function initMap() {
   // Request needed libraries.
   const { Map, InfoWindow } = await google.maps.importLibrary("maps");
   var map = new google.maps.Map(document.getElementById('map'), {
-    center: { lat: -34.901112, lng: -56.164532 },
-    zoom: 13
+    // center: { lat: -34.901112, lng: -56.164532 }, // Montevideo
+    // center: { lat: -34.86574, lng: -56.17798 }, // Brazo Oriental - Zoom 13
+    center: { lat: -34.8167, lng: -56.1833 }, // Peñarol - Zoom 12
+    zoom: 12
   });
 
   // Fetch the coordinates from 'mvd_coordinates' CSV file
