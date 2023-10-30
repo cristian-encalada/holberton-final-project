@@ -28,7 +28,7 @@ time.sleep(4)
 
 # pop up publicidad
 try:
-    btnpopup1 = driver.find_element(By.XPATH, '//body/div[2]/div//button')
+    btnpopup1 = driver.find_element(By.XPATH, '//*[@id="bodyTag"]/body/div[2]//button')
     btnpopup1.click()
 except Exception as e:
     pass
@@ -48,7 +48,7 @@ time.sleep(4)
 lst_data = []
 
 # capturar en rango desde la pagina 0 hasta la que determine range()
-for i in range(2):
+for i in range(10):
 
     # avanzar de pagina
     if i == 1:
