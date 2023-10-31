@@ -43,17 +43,36 @@ async function initMap() {
 
   const infoWindows = []; // Store created InfoWindows in an array
 
-  const createInfoWindow = (position, content) => {
-    // Create an InfoWindow to display price information
+  const createInfoWindow = (position, priceInfo, url_link, origin, zone) => {
+  // Create an InfoWindow to display price information and URL link
+  const content = `<div><strong>${priceInfo}</strong></div>
+  <div onmouseover="(() => {
+    if (!this.hasAppendedLink) {
+        var linkDiv = document.createElement('div');
+        var link = document.createElement('a');
+        link.href = '${url_link}';
+        link.target = '_blank'; // Open the URL in a new tab
+        link.textContent = 'URL: ${url_link}';
+        linkDiv.appendChild(link);
+        this.appendChild(linkDiv);
+        var originDiv = document.createElement('div');
+        originDiv.textContent = 'Fuente: ${origin}';
+        this.appendChild(originDiv);
+        var zoneDiv = document.createElement('div');
+        zoneDiv.textContent = 'Zona: ${zone}';
+        this.appendChild(zoneDiv);
+        this.hasAppendedLink = true; // Set the flag to true to prevent further appends
+    }
+  })()">Ver detalles</div>`;
     const infoWindow = new google.maps.InfoWindow({
       position,
-      content: `${content}<button onclick=alert('Hello')>Detalles</button>`, // Add the button inside the content
+      content: content,
       disableAutoPan: true, // Disable automatic centering
     });
-    
+  
     // Open the InfoWindow by default
     infoWindow.open(map);
-    
+  
     infoWindows.push(infoWindow); // Store the created InfoWindow in the array
   };
 
@@ -87,12 +106,21 @@ async function initMap() {
               // Use a default format if currency is neither UYU nor USD
               priceInfo = `<div><strong>${rent.price} ${rent.currency}</strong></div>`;
             }
+            let url_link;
+            url_link = rent.url_link; 
+            let origin;
+            origin = rent.origin;
+            let zone;
+            zone = rent.zone_name;
             createInfoWindow(
               {
                 lat: rent.location.latitude,
                 lng: rent.location.longitude,
               },
-              priceInfo
+              priceInfo,
+              url_link,
+              origin,
+              zone
             );
           }
         });
