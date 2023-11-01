@@ -1,7 +1,7 @@
 # from modules import modules
 from flask import abort, jsonify, make_response, request
 from modules.utils import is_int, chek_int, tex_none, sorting, conversion
-from modules.db import get_rents, get_all, get_map_operation, get_cont_zone, get_conteo_municipio
+from modules.db import get_rents, get_all, get_map_operation, get_cont_zone_v2, get_conteo_municipio
 from flasgger import Swagger
 from flasgger.utils import swag_from
 
@@ -107,7 +107,7 @@ def configure_routes(app):
     @swag_from('documentation/rent/api_get_cont_zones.yml', methods=['GET'])
     def get_cont_zones(type_operations):
 
-        (rents, total_num_entries, query) = get_cont_zone(
+        (rents, total_num_entries, query) = get_cont_zone_v2(
             type_operations)
         
         response = {

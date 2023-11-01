@@ -157,8 +157,9 @@ def get_map_operation(type_operations, zones):
     return (rents, total_num_rents, query)
 
 
+# Deprecated
 def get_cont_zone(type_operations):
-    """cont all the properties in all zones"""
+    """count all the properties in all zones"""
 
     propertys = f_operation(type_operations)
     if type(propertys) is not str:
@@ -179,6 +180,42 @@ def get_cont_zone(type_operations):
     total_num_rents = 0 #eliminar
 
     return (all_zones, total_num_rents, cont)
+
+
+
+def get_cont_zone_v2(type_operations):
+  """Count all the properties in all zones"""
+
+  propertys = f_operation(type_operations)
+  if type(propertys) is not str:
+    return propertys
+
+  cont = 0
+  pipeline = [
+      {
+          "$match": {}  # You can add any filtering conditions here
+      },
+      {
+          "$group": {
+              "_id": "$zone_name",
+              "cantidad": {"$sum": 1}
+          }
+      },
+      {
+          "$project": {
+              "zona": "$_id",
+              "_id": 0,
+              "cantidad": 1
+          }
+      }
+  ]
+
+  result = list(db[propertys].aggregate(pipeline))
+
+  total_num_rents = sum(item["cantidad"] for item in result)
+
+  return (result, total_num_rents, cont)
+
 
 
 def get_conteo_municipio(type_operations):
