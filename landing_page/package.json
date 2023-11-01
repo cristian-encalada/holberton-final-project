@@ -1,0 +1,14 @@
+{
+  "name": "landing-page",
+  "version": "1.0.0",
+  "description": "[Landing Page](https://www.tailwindtoolbox.com/templates/landing-page) is an open source, generic landing page template for [Tailwind CSS](https://tailwindcss.com/) created by [Tailwind Toolbox](https://www.tailwindtoolbox.com/).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.3.5"
+  }
+}

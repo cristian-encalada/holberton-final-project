@@ -1,0 +1,113 @@
+<div class="flex gap-10 justify-center flex-wrap">
+      <div class="flex flex-col w-5/6 lg:w-1/4 mx-auto lg:mx-0 rounded-2xl lg:rounded-2xl bg-white mt-4 shadow-2xl">
+        <div class="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow">
+          <div class="p-8 text-2xl w-full font-bold text-center border-b-4">
+            <h1 class="text-2xl">Cristian Encalada</h1>
+            <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+            <p class="text-sm w-full  text-center">Project Manager <br>Full-Stack</p>
+          </div>
+          <ul class="w-full text-center text-sm flex justify-center">
+            <img src="ch.jpg" class="rounded shadow-2xl" alt="">
+          </ul>
+        </div>
+        <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+          <div class="flex items-center justify-around">
+            <a href="https://www.linkedin.com/in/jos%C3%A9-cristian-encalada-camargo-45099616a/" target="_blank"
+              rel="noreferrer" class="opacity-50 hover:scale-125 transition hover:opacity-100"> <img src="logoln.png"
+                alt="img" width="100"></a>
+            <a href="https://github.com/cristian-encalada" target="_blank" rel="noreferrer"
+              class="opacity-50 hover:scale-125 transition hover:opacity-100"> <img src="GitHub-Mark-ea2971cee799.png"
+                alt="img" width="142"></a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex flex-col w-5/6 lg:w-1/4 mx-auto lg:mx-0 rounded-2xl lg:rounded-2xl bg-white mt-4 shadow-2xl pb-10">
+        <div class="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow">
+          <div class="p-8 text-2xl w-full font-bold text-center border-b-4">
+            <h1 class="text-2xl">Gabriel Delgado</h1>
+            <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+            <p class="text-sm w-full  text-center">Full-Stack <br>UX/UI designer</p>
+          </div>
+          <ul class="w-full text-center text-sm flex justify-center">
+            <img src="Gabriel_Delgado.png" class="rounded shadow-2xl" alt="">
+          </ul>
+        </div>
+        <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+          <div class="flex items-center justify-around">
+            <a href="https://www.linkedin.com/in/gabr1el20/" target="_blank" rel="noreferrer"
+              class="opacity-50 hover:scale-125 transition hover:opacity-100"> <img src="logoln.png" alt="img"
+                width="100"></a>
+            <a href="https://github.com/Gabr1el20" target="_blank" rel="noreferrer"
+              class="opacity-50 hover:scale-125 transition hover:opacity-100"> <img src="GitHub-Mark-ea2971cee799.png"
+                alt="img" width="142"></a>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col w-5/6 lg:w-1/4 mx-auto lg:mx-0 rounded-2xl lg:rounded-2xl bg-white mt-4 shadow-2xl">
+        <div class="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow">
+          <div class="p-8 text-2xl w-full font-bold text-center border-b-4">
+            <h1 class="text-2xl">Martín Leiro</h1>
+            <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+            <p class="text-sm w-full  text-center">Back-end <br>Data Engineer / Web scraper</p>
+          </div>
+          <ul class="w-full text-center text-sm flex justify-center">
+            <img src="Martin_Leiro.jpg" class="rounded shadow-2xl" alt="">
+          </ul>
+        </div>
+        <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+          <div class="flex items-center justify-around">
+            <a href="https://www.linkedin.com/in/martin-leiro-5a46a7275/" target="_blank" rel="noreferrer"
+              class="opacity-50 hover:scale-125 transition hover:opacity-100"> <img src="logoln.png" alt="img"
+                width="100"></a>
+            <a href="https://github.com/hentype85" target="_blank" rel="noreferrer"
+              class="opacity-50 hover:scale-125 transition hover:opacity-100"> <img src="GitHub-Mark-ea2971cee799.png"
+                alt="img" width="142"></a>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col w-5/6 lg:w-1/4 mx-auto lg:mx-0 rounded-2xl lg:rounded-2xl bg-white mt-4 shadow-2xl">
+        <div class="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow">
+          <div class="p-8 text-2xl w-full font-bold text-center border-b-4">
+            <h1 class="text-2xl">Emiliano Garín</h1>
+            <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+            <p class="text-sm w-full  text-center">Back-End <br>API Manager</p>
+          </div>
+          <ul class="w-full text-center text-sm flex justify-center">
+            <img src="Emiliano_Garin.jpg" class="rounded shadow-2xl" alt="">
+          </ul>
+        </div>
+        <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+          <div class="flex items-center justify-around">
+            <a href="https://www.linkedin.com/in/emiliano-garin-36a2b31ab/" target="_blank" rel="noreferrer"
+              class="opacity-50 hover:scale-125 transition hover:opacity-100"> <img src="logoln.png" alt="img"
+                width="100"></a>
+            <a href="https://github.com/emilianogarin" target="_blank" rel="noreferrer"
+              class="opacity-50 hover:scale-125 transition hover:opacity-100"> <img src="GitHub-Mark-ea2971cee799.png"
+                alt="img" width="142"></a>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col w-5/6 lg:w-1/4 mx-auto lg:mx-0 rounded-2xl lg:rounded-2xl bg-white mt-4 shadow-2xl">
+        <div class="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow">
+          <div class="p-8 text-2xl w-full font-bold text-center border-b-4 ">
+            <h1 class="text-2xl">Alejandro Martinez</h1>
+            <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+            <p class="text-sm w-full  text-center">UX/UI Designer <br>Full-Stack</p>
+          </div>
+          <ul class="w-full text-center text-sm flex justify-center">
+            <img src="Alejandro_Martinez.png" class="rounded shadow-2xl" alt="">
+          </ul>
+        </div>
+        <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+          <div class="flex items-center justify-around">
+            <a href="https://www.linkedin.com/in/alejandro-martinez-319517147/" target="_blank" rel="noreferrer"
+              class="opacity-50 hover:scale-125 transition hover:opacity-100"> <img src="logoln.png" alt="img"
+                width="100"></a>
+            <a href="https://github.com/alemao51092" target="_blank" rel="noreferrer"
+              class="opacity-50 hover:scale-125 transition hover:opacity-100"> <img src="GitHub-Mark-ea2971cee799.png"
+                alt="img" width="142"></a>
+          </div>
+        </div>
+      </div>
+    </div>
