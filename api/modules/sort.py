@@ -17,13 +17,9 @@ def sort_apply(rent, sort, conv):
         def custom_key(document):
             return tuple(t * document[o] for o, t in sorts.items())
         rent = sorted(rent, key=custom_key)
+    
+    if "price" in sort and rent:
+        for document in rent:
+            del document["price_conv"]
     return(rent)
 
-def delete__id(rent):
-    """delete _id and price_conv"""
-    if rent:
-        for document in rent:
-            del document["_id"] #delete the _id (ObjectID)
-            if "price_conv" in document:
-                del document["price_conv"]
-    return rent

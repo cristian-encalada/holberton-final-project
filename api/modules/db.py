@@ -1,7 +1,5 @@
 from modules.f_filters import f_operation, f_area, f_bathrooms, f_bedrooms, f_currency, f_price, f_types, f_zones
-from modules.sort_delete import sort_apply, delete__id
-import re
-
+from modules.sort import sort_apply
 from flask import current_app, g
 from werkzeug.local import LocalProxy
 from pymongo import MongoClient
@@ -27,7 +25,7 @@ def build_query_sort_project(filters):
     """
     sort = filters["sort"]
     query = {}
-    project = None # elije que datos traer, de momento traeremos todos
+    project = {"_id": 0} # elije que datos traer, de momento traeremos todos
 
     #filtrado
     filters_list = []
@@ -97,9 +95,8 @@ def get_rents(type_operations, conv, filters, page, rents_per_page):
         rents = rents[skip:]
     else:
         rents = []
-    rents = delete__id(rents)
 
-    return (rents, total_num_rents, query)
+    return (rents, total_num_rents)
 
 
 def get_all(type_operations, conv, sort, page, rents_per_page):
@@ -111,7 +108,7 @@ def get_all(type_operations, conv, sort, page, rents_per_page):
     if type(propertys) is not str:
         return propertys
     
-    cursor = db[propertys].find()
+    cursor = db[propertys].find({},{"_id": 0})
 
     rents = sort_apply(list(cursor), sort, conv)
 
@@ -125,10 +122,9 @@ def get_all(type_operations, conv, sort, page, rents_per_page):
         rents = rents[skip:]
     else:
         rents = []
-    rents = delete__id(rents)
     query = {}#eliminar
 
-    return (rents, total_num_rents, query)
+    return (rents, total_num_rents)
 
 
 def get_map_operation(type_operations, zones):
@@ -154,33 +150,7 @@ def get_map_operation(type_operations, zones):
     total_num_rents = len(rents)
     
 
-    return (rents, total_num_rents, query)
-
-
-# Deprecated
-def get_cont_zone(type_operations):
-    """count all the properties in all zones"""
-
-    propertys = f_operation(type_operations)
-    if type(propertys) is not str:
-        return propertys
-    
-    project = {
-        "zona": 1,
-        "_id": 0}
-    query = {}
-    all_zones = list(db.zonas_mvd_col.find(query,project))
-
-    cont = 0
-    for zone in all_zones:
-        escaped_zones = re.escape(zone["zona"])
-        zone["cantidad"] = db[propertys].count_documents({"zone_name": {"$regex": escaped_zones, "$options": "i"}})
-        cont += zone["cantidad"]
-
-    total_num_rents = 0 #eliminar
-
-    return (all_zones, total_num_rents, cont)
-
+    return (rents, total_num_rents)
 
 
 def get_cont_zone_v2(type_operations):
@@ -190,7 +160,6 @@ def get_cont_zone_v2(type_operations):
   if type(propertys) is not str:
     return propertys
 
-  cont = 0
   pipeline = [
       {
           "$match": {}  # You can add any filtering conditions here
@@ -214,39 +183,4 @@ def get_cont_zone_v2(type_operations):
 
   total_num_rents = sum(item["cantidad"] for item in result)
 
-  return (result, total_num_rents, cont)
-
-
-
-def get_conteo_municipio(type_operations):
-    """cont all the properties in all zones"""
-
-    propertys = f_operation(type_operations)
-    if type(propertys) is not str:
-        return propertys
-    
-    project = {
-        "zona": 1,
-        "_id": 0}
-    municipios = ["A", "B", "C", "CH", "D", "E", "F", "G"]
-    escaped_municipios = [re.escape(municipio) for municipio in municipios]
-    
-    all_municipios = {}
-    for municipio in escaped_municipios:
-        query = {"municipio": {"$regex": municipio, "$options": "i"}}# "i" para que sea insensible a mayúsculas/minúsculas
-        all_municipios[municipio] = list(db.zonas_mvd_col.find(query,project))
-
-    cont = 0
-    result = []
-    for municipio, list_zone in all_municipios.items():
-        res = {}
-        escaped_zones = [re.escape(zone["zona"]) for zone in list_zone]
-        regex_pattern = "|".join(escaped_zones)
-        res["cantidad"] = db[propertys].count_documents({"zone_name": {"$regex": regex_pattern, "$options": "i"}})
-        res["municipio"] = municipio
-        cont += res["cantidad"]
-        result.append(res)
-
-    total_num_rents = 0 #eliminar
-
-    return (result, total_num_rents, cont)
+  return (result, total_num_rents)

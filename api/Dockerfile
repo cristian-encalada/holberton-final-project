@@ -11,6 +11,9 @@ RUN pip install requests
 RUN pip install -U flask-cors
 RUN pip install flasgger
 RUN pip install pymongo
+# Agrega las dependencias adicionales
+RUN pip install json
+RUN pip install gitpython
 # Expon el puerto 5000 para Flask (ajusta según sea necesario)
 EXPOSE 5000
 # Clonar repositorio

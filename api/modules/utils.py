@@ -1,6 +1,5 @@
-import requests
-
-
+import os
+import json
 
 def is_int(text):
     """
@@ -62,25 +61,23 @@ def sorting(text):
                     sorting_criteria_dict[pair_elements[0]] = order
     return sorting_criteria_dict
 
-
-def conversion():
+def cambio_call():
     """
-    Retrieves the currency conversion rate between two currencies.
-    In this case, the function fetches the conversion rate between USD and UYU.
-    If the API call fails, it returns a default value of 40 as a sample conversion rate.
+    Retrieves the value of the currency conversion rate from the cambio.json file.
+    
+    This function reads the cambio.json file, which contains the conversion rate between two currencies,
+    and retrieves the value of the currency conversion rate. The cambio.json file is expected to be located 
+    in the 'data' directory relative to the current script's location. If the file is found and successfully 
+    read, the function returns the value of the currency conversion rate. If the file is not found or cannot 
+    be read, the function will raise an appropriate error.
+
+    Returns:
+    float: The value of the currency conversion rate from the cambio.json file.
     """
-    access_key = '108becf3bf3c99a76d9548282aa88dba51012e8b'
-    base_currency = 'USD'
-    target_currency = 'UYU'
+    current_directory = os.path.dirname(os.path.abspath(__file__))
+    data_directory = os.path.abspath(os.path.join(current_directory, "../../data"))
+    cambio_json_path = os.path.join(data_directory, "cambio.json")
 
-    url = f'https://api.getgeoapi.com/v2/currency/convert?api_key={access_key}&from={base_currency}&to={target_currency}&amount=1&format=json'
-    response = requests.get(url)
-
-    if response.status_code == 200:
-        conversion_data = response.json()
-        if conversion_data['status'] == 'success':
-            converted_value = float(conversion_data['rates']['UYU']['rate'])
-            return converted_value
-    print("No more API queries for conversion. Sample value: 40")
-    return 40
-    # return None
+    with open(cambio_json_path, 'r') as file:
+        data = json.load(file)
+        return data["rate"]
