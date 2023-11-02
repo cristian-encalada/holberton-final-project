@@ -2,11 +2,12 @@ from github import Github
 import os
 
 # token github desde variable de entorno
-token = os.environ['TOKEN'] = 'gha_jyFmn2tDUKcRwtrKduF2LaOmWzkNnk0MbDyA'
+# token = os.environ['TOKEN'] = 'tokengithub'
+if "TOKEN" in os.environ:
+    token = os.environ["TOKEN"]
+else:
+    print("Environment variable TOKEN is not defined. ( export TOKEN=yourtoken )")
 
-# chequear si no se agrega el token
-if token is None:
-    raise ValueError("GitHub token needed.")
 
 g = Github(token)
 
@@ -17,8 +18,8 @@ branch_name = "main"
 
 # clave: ruta local , valor: ruta repositorio
 json_files = {
-    "/root/airflow/dags/gallito.json": "data/gallito.json",
-    "/root/airflow/dags/infocasas.json": "data/infocasas.json",
+    "/gallito.json": "data/gallito.json",
+    "/infocasas.json": "data/infocasas.json",
     "/extracted_data.json": "data/mercadolibre.json"
 }
 

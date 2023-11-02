@@ -14,7 +14,7 @@ start Airflow:
 airflow standalone
 ```
 
-* colocar token de github en archivo "/root/Alquivago/webscraping/upload.py":
+* configurar variable de entorno del TOKEN de github:
 ```
-token = os.environ['TOKEN'] = 'token de github'
+root@b7831ca266f9:/root/Alquivago/webscraping# export TOKEN=tokendegithub
 ```
