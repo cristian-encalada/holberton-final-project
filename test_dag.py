@@ -11,7 +11,7 @@ from airflow.utils.dates import days_ago
 
 default_args = {
     'owner': 'alquivago',
-    'start_date': datetime(2023, 10, 9),
+    'start_date': datetime(2023, 11, 2),
     'email': ['..@mail.com'],
     'email_on_failure': False,
     'email_on_retry': False,
@@ -47,7 +47,7 @@ with DAG(
     'dag_mercadolibre',
     default_args=default_args,
     description='Extract mercadolibre',
-    schedule_interval=timedelta(hours=1),
+    schedule_interval=timedelta(hours=10),
     # schedule_interval=None,
     tags=['mercadolibre']
 ) as dag:
@@ -60,7 +60,7 @@ with DAG(
     'dag_infocasas',
     default_args=default_args,
     description='Scraping infocasas',
-    schedule_interval=timedelta(hours=4),
+    schedule_interval=timedelta(hours=12),
     # schedule_interval=None,
     tags=['infocasas']
 ) as dag:
@@ -73,7 +73,7 @@ with DAG(
     'dag_gallito',
     default_args=default_args,
     description='Scraping gallito',
-    schedule_interval=timedelta(hours=2),
+    schedule_interval=timedelta(hours=8),
     # schedule_interval=None,
     tags=['gallito']
 ) as dag:
