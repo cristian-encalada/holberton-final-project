@@ -1,13 +1,13 @@
 from github import Github
 import os
 
-# token github desde variable de entorno
 # token = os.environ['TOKEN'] = 'tokengithub'
+
+# variable de entorno TOKEN
 if "TOKEN" in os.environ:
     token = os.environ["TOKEN"]
 else:
     print("Environment variable TOKEN is not defined. ( export TOKEN=yourtoken )")
-
 
 g = Github(token)
 
@@ -25,13 +25,14 @@ json_files = {
 
 # leer archivo json
 for k, v in json_files.items():
+
     with open(k, 'r') as op:
         contenido = op.read()
 
-    try:
-        # obtener el contenido del archivo en GitHub
-        file_content = repo.get_contents(v, ref=branch_name)
+    # obtener el contenido del archivo en GitHub
+    file_content = repo.get_contents(v, ref=branch_name)
 
+    if file_content:
         # si el archivo existe
         repo.update_file(
             path=v,
@@ -40,7 +41,7 @@ for k, v in json_files.items():
             branch=branch_name,
             sha=file_content.sha
         )
-    except Exception as e:
+    else:
         # si el archivo no existe
         repo.create_file(
             path=v,

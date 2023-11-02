@@ -9,12 +9,12 @@ run from hub.docker:
 docker pull hentype/standalone-chrome-airflow
 ```
 
-start Airflow:
-```
-airflow standalone
-```
-
 * configure environment variable for a GitHub token on your system:
 ```
-root@b7831ca266f9:/root/Alquivago/webscraping# export TOKEN=tokendegithub
+root@0d545fdeaefb:/# export TOKEN=githubtoken
+```
+
+start Airflow:
+```
+root@0d545fdeaefb:/# airflow standalone
 ```
