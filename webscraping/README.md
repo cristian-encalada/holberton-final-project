@@ -14,7 +14,7 @@ start Airflow:
 airflow standalone
 ```
 
-* configurar variable de entorno del TOKEN de github:
+* configure environment variable for a GitHub token on your system:
 ```
 root@b7831ca266f9:/root/Alquivago/webscraping# export TOKEN=tokendegithub
 ```
