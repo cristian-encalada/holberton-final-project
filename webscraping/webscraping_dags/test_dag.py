@@ -11,7 +11,7 @@ from airflow.utils.dates import days_ago
 
 default_args = {
     'owner': 'alquivago',
-    'start_date': datetime(2023, 10, 9),
+    'start_date': datetime(2023, 11, 2),
     'email': ['..@mail.com'],
     'email_on_failure': False,
     'email_on_retry': False,
