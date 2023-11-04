@@ -12,7 +12,89 @@ parameters:
     in: path
     type: string
     required: false
-    description: List of zones (e.g., 1,2)
+    description: |
+      Zones filter
+      Allowed values: 
+        - 1: Ciudad Vieja
+        - 2: Centro
+        - 3: Barrio Sur
+        - 4: Cordón
+        - 5: Palermo
+        - 6: Parque Rodó
+        - 7: Punta Carretas
+        - 8: Pocitos
+        - 9: Buceo
+        - 10: Parque Batlle
+        - 11: Malvín
+        - 12: Malvín Norte
+        - 13: Punta Gorda
+        - 14: Carrasco
+        - 15: Carrasco Norte
+        - 16: Bañados de Carrasco
+        - 17: Maroñas
+        - 18: Flor de Maroñas
+        - 19: Las Canteras
+        - 20: Punta de Rieles
+        - 21: Jardines del Hipódromo
+        - 22: Ituzaingó
+        - 23: Unión
+        - 24: Villa Española
+        - 25: Mercado Modelo
+        - 26: Castro
+        - 27: Cerrito de la Victoria
+        - 28: Las Acacias
+        - 29: Aires Puros
+        - 30: Casavalle
+        - 31: Piedras Blancas
+        - 32: Manga
+        - 33: Paso de las Duranas
+        - 34: Peñarol
+        - 35: Villa del Cerro
+        - 36: Casabó
+        - 37: La Paloma
+        - 38: La Teja
+        - 39: Prado
+        - 40: Capurro
+        - 41: Aguada
+        - 42: Reducto
+        - 43: Atahualpa
+        - 44: Jacinto Vera
+        - 45: La Figurita
+        - 46: Larrañaga
+        - 47: La Blanqueada
+        - 48: Villa Muñoz
+        - 49: La Comercial
+        - 50: Tres Cruces
+        - 51: Brazo Oriental
+        - 52: Sayago
+        - 53: Conciliación
+        - 54: Belvedere
+        - 55: Nuevo París
+        - 56: Tres Ombúes
+        - 57: Paso de la Arena
+        - 58: Colón Sureste
+        - 59: Colón Centro y Noroeste
+        - 60: Lezica
+        - 61: Villa García
+        - 62: Manga
+        - 63: Villa Dolores
+        - 64: Parque Guaraní
+        - 65: Bella Italia
+        - 66: Bolívar
+        - 67: Marconi
+        - 68: Toledo Chico
+        - 69: Lavalleja
+        - 70: Pajas Blancas
+        - 71: Tomkinson
+        - 72: Nueva Savona
+        - 73: Bella Vista
+        - 74: Arroyo Seco
+        - 75: Retiro
+        - 76: Goes
+        - 77: Paso Molino
+        - 78: Pueblo Victoria
+        - 79: Santiago Vázquez
+        - 80: Abayubá
 responses:
   200:
     description: Successful request

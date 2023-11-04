@@ -101,6 +101,24 @@ parameters:
         - 60: Lezica
         - 61: Villa García
         - 62: Manga
+        - 63: Villa Dolores
+        - 64: Parque Guaraní
+        - 65: Bella Italia
+        - 66: Bolívar
+        - 67: Marconi
+        - 68: Toledo Chico
+        - 69: Lavalleja
+        - 70: Pajas Blancas
+        - 71: Tomkinson
+        - 72: Nueva Savona
+        - 73: Bella Vista
+        - 74: Arroyo Seco
+        - 75: Retiro
+        - 76: Goes
+        - 77: Paso Molino
+        - 78: Pueblo Victoria
+        - 79: Santiago Vázquez
+        - 80: Abayubá
   - name: dormitorios
     in: query
     type: string
