@@ -4,10 +4,8 @@ async function initMap() {
   // Request needed libraries.
   const { Map, InfoWindow } = await google.maps.importLibrary("maps");
   var map = new google.maps.Map(document.getElementById('map'), {
-    // center: { lat: -34.901112, lng: -56.164532 }, // Montevideo
-    // center: { lat: -34.86574, lng: -56.17798 }, // Brazo Oriental - Zoom 13
-    center: { lat: -34.8167, lng: -56.1833 }, // Peñarol - Zoom 12
-    zoom: 12
+    center: { lat: -34.8167, lng: -56.1833 }, // Montevideo - Zoom 12
+    zoom: 11
   });
 
   // Fetch the coordinates from 'mvd_coordinates' CSV file
@@ -39,9 +37,9 @@ async function initMap() {
 async function addPolygon(map, coordinates, name, apiData) {
   const polygon = new google.maps.Polygon({
     paths: coordinates,
-    strokeColor: '#0000FF',
+    strokeColor: 'black',
     strokeOpacity: 0.8,
-    strokeWeight: 2,
+    strokeWeight: 1,
     fillColor: 'transparent',
     fillOpacity: 0.35
   });
@@ -81,8 +79,12 @@ async function addPolygon(map, coordinates, name, apiData) {
 
   // Add click event listener
   polygon.addListener('click', function() {
-    const polygonCenter = bounds.getCenter();
-    alert(`Polygon Name: ${name}\nCenter: Lat ${polygonCenter.lat()}, Lng ${polygonCenter.lng()}`);
+  const polygonCenter = bounds.getCenter();
+  // Use the polygon's center coordinates for the clicked zone
+  const centerCoordinates = { lat: polygonCenter.lat(), lng: polygonCenter.lng() };
+
+  // Call initMap2 with the selected coordinates
+  initMap2(centerCoordinates); 
   });
 }
 
@@ -97,13 +99,13 @@ async function fetchData() {
   // initMap2(); // Call the initMap2 function after fetching the data
 }
 
-async function initMap2() {
+async function initMap2(centerCoordinates) {
   // Request needed libraries.
   const { Map } = await google.maps.importLibrary("maps");
   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker"); // Import AdvancedMarkerElement
   const map = new Map(document.getElementById("map"), {
-    center: { lat: -34.906698, lng: -56.2076854 }, // Ciudad Vieja - Montevideo
-    zoom: 15,
+    center: centerCoordinates,
+    zoom: 16,
     mapId: "16aaecb986532f9a",
   });
 
@@ -111,7 +113,7 @@ async function initMap2() {
 
   function createBlueCircleMarker(position) {
     // Create blue circle markers
-    const blueCircleSvgString = '<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="blue" /></svg>';
+    const blueCircleSvgString = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="red" /></svg>';
     const blueCircleSvg = new DOMParser().parseFromString(blueCircleSvgString, "image/svg+xml").documentElement;
 
     const marker = new AdvancedMarkerElement({
@@ -175,7 +177,7 @@ async function initMap2() {
     });
     markers.length = 0; // Clear the markers array
 
-    if (zoom >= 16) {
+    if (zoom >= 17) {
       if (allRentsData && allRentsData.rents) {
         allRentsData.rents.forEach((rent) => {
           if (rent.location && rent.location.latitude && rent.location.longitude) {
@@ -208,7 +210,7 @@ async function initMap2() {
           }
         });
       }
-    } else if (zoom < 16) {
+    } else if (zoom < 17) {
       if (allRentsData && allRentsData.rents) {
         allRentsData.rents.forEach((rent) => {
           if (rent.location && rent.location.latitude && rent.location.longitude) {
