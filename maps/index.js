@@ -1,5 +1,88 @@
 // ########## Map 1. Initial map divided by zones #############
 
+const zoneMapping = {
+  "Ciudad Vieja": 1,
+  "Centro": 2,
+  "Barrio Sur": 3,
+  "Cordón": 4,
+  "Palermo": 5,
+  "Parque Rodó": 6,
+  "Punta Carretas": 7,
+  "Pocitos": 8,
+  "Buceo": 9,
+  "Parque Batlle": 10,
+  "Malvín": 11,
+  "Malvín Norte": 12,
+  "Punta Gorda": 13,
+  "Carrasco": 14,
+  "Carrasco Norte": 15,
+  "Bañados de Carrasco": 16,
+  "Maroñas": 17,
+  "Flor de Maroñas": 18,
+  "Las Canteras": 19,
+  "Punta de Rieles": 20,
+  "Jardines del Hipódromo": 21,
+  "Ituzaingó": 22,
+  "Unión": 23,
+  "Villa Española": 24,
+  "Mercado Modelo": 25,
+  "Castro": 26,
+  "Cerrito de la Victoria": 27,
+  "Las Acacias": 28,
+  "Aires Puros": 29,
+  "Casavalle": 30,
+  "Piedras Blancas": 31,
+  "Manga": 32,
+  "Paso de las Duranas": 33,
+  "Peñarol": 34,
+  "Villa del Cerro": 35,
+  "Casabó": 36,
+  "La Paloma": 37,
+  "La Teja": 38,
+  "Prado": 39,
+  "Capurro": 40,
+  "Aguada": 41,
+  "Reducto": 42,
+  "Atahualpa": 43,
+  "Jacinto Vera": 44,
+  "La Figurita": 45,
+  "Larrañaga": 46,
+  "La Blanqueada": 47,
+  "Villa Muñoz": 48,
+  "La Comercial": 49,
+  "Tres Cruces": 50,
+  "Brazo Oriental": 51,
+  "Sayago": 52,
+  "Conciliación": 53,
+  "Belvedere": 54,
+  "Nuevo París": 55,
+  "Tres Ombúes": 56,
+  "Paso de la Arena": 57,
+  "Colón Sureste": 58,
+  "Colón Centro y Noroeste": 59,
+  "Lezica": 60,
+  "Villa García": 61,
+  "Manga": 62,
+  "Villa Dolores": 63,
+  "Parque Guaraní": 64,
+  "Bella Italia": 65,
+  "Bolívar": 66,
+  "Marconi": 67,
+  "Toledo Chico": 68,
+  "Lavalleja": 69,
+  "Pajas Blancas": 70,
+  "Tomkinson": 71,
+  "Nueva Savona": 72,
+  "Bella Vista": 73,
+  "Arroyo Seco": 74,
+  "Retiro": 75,
+  "Goes": 76,
+  "Paso Molino": 77,
+  "Pueblo Victoria": 78,
+  "Santiago Vázquez": 79,
+  "Abayubá": 80
+};
+
 async function initMap() {
   // Request needed libraries.
   const { Map, InfoWindow } = await google.maps.importLibrary("maps");
@@ -30,11 +113,11 @@ async function initMap() {
   const apiData = await apiResponse.json();
 
   for (const name in polygons) {
-    addPolygon(map, polygons[name], name, apiData);
+    addPolygon(map, polygons[name], name, apiData, zoneMapping[name]);
   }
 }
 
-async function addPolygon(map, coordinates, name, apiData) {
+async function addPolygon(map, coordinates, name, apiData, zoneNumber) {
   const polygon = new google.maps.Polygon({
     paths: coordinates,
     strokeColor: 'black',
@@ -84,7 +167,7 @@ async function addPolygon(map, coordinates, name, apiData) {
   const centerCoordinates = { lat: polygonCenter.lat(), lng: polygonCenter.lng() };
 
   // Call initMap2 with the selected coordinates
-  initMap2(centerCoordinates); 
+  initMap2(centerCoordinates, zoneNumber); 
   });
 }
 
@@ -99,14 +182,44 @@ async function fetchData() {
   // initMap2(); // Call the initMap2 function after fetching the data
 }
 
-async function initMap2(centerCoordinates) {
+
+async function initMap2(centerCoordinates, zoneNumber) {
   // Request needed libraries.
   const { Map } = await google.maps.importLibrary("maps");
+  // Construct the API URL using the zoneNumber
+  const apiUrl = `https://alquivago-flask-apis.vercel.app/api/v1/rent/mapa/${zoneNumber}`;
+  const response = await fetch(apiUrl);
+  allRentsData = await response.json();
   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker"); // Import AdvancedMarkerElement
   const map = new Map(document.getElementById("map"), {
     center: centerCoordinates,
     zoom: 16,
     mapId: "16aaecb986532f9a",
+  });
+
+  // "Mapa por Zonas" button
+  const mainMapButton = document.createElement('button');
+  mainMapButton.textContent = 'Mapa por Zonas';
+  mainMapButton.style.position = 'absolute';
+  mainMapButton.style.top = '10px'; // Adjust the top position as needed
+  mainMapButton.style.left = '50%'; // Center horizontally
+  mainMapButton.style.zIndex = '1';
+  mainMapButton.style.backgroundColor = 'white';
+  mainMapButton.style.padding = '5px';
+  mainMapButton.style.border = '1px solid #ccc';
+  mainMapButton.style.cursor = 'pointer';
+
+  // Add the button to the map container
+  const mapContainer = document.getElementById("map");
+  mapContainer.appendChild(mainMapButton);
+
+  // Add an event listener to the "Main Map" button to call initMap()
+  mainMapButton.addEventListener('click', () => {
+    // Remove the button
+    mainMapButton.remove();
+    
+    // Call initMap() to return to the main map
+    initMap();
   });
 
   let markers = []; // Store created markers in an array
