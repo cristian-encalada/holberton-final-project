@@ -36,6 +36,7 @@ def conversion():
                 json.dump({"rate": converted_value}, file)
             # Agregar cambios al repositorio de Git
             data_directory = os.path.abspath(os.path.join(data_directory, "../"))
+            cambio_json_path = os.path.join(data_directory, "data/cambio.json")
             repo = git.Repo(data_directory)
             repo.git.add(cambio_json_path)
             repo.index.commit("Update the file: cambio.json")
@@ -49,6 +50,7 @@ def conversion():
         json.dump({"rate": default_value}, file)
     # Agregar cambios al repositorio de Git
     data_directory = os.path.abspath(os.path.join(data_directory, "../"))
+    cambio_json_path = os.path.join(data_directory, "data/cambio.json")
     repo = git.Repo(data_directory)
     repo.git.add(cambio_json_path)
     repo.index.commit("No more API queries for conversion. Sample value: 40")
