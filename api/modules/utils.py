@@ -1,5 +1,5 @@
-import os
 import json
+import requests
 
 def is_int(text):
     """
@@ -63,21 +63,25 @@ def sorting(text):
 
 def cambio_call():
     """
-    Retrieves the value of the currency conversion rate from the cambio.json file.
+    Retrieves the value of the currency conversion rate from a remote JSON file.
     
-    This function reads the cambio.json file, which contains the conversion rate between two currencies,
-    and retrieves the value of the currency conversion rate. The cambio.json file is expected to be located 
-    in the 'data' directory relative to the current script's location. If the file is found and successfully 
-    read, the function returns the value of the currency conversion rate. If the file is not found or cannot 
-    be read, the function will raise an appropriate error.
+    This function makes an HTTP request to the given URL, which contains the conversion rate between two currencies,
+    and retrieves the value of the currency conversion rate. If the request is successful and the JSON data is parsed,
+    the function returns the value of the currency conversion rate. If there are any errors during the request or JSON
+    parsing, the function will raise an appropriate error.
 
     Returns:
-    float: The value of the currency conversion rate from the cambio.json file.
+    float: The value of the currency conversion rate from the remote JSON file.
     """
-    current_directory = os.path.dirname(os.path.abspath(__file__))
-    data_directory = os.path.abspath(os.path.join(current_directory, "../../data"))
-    cambio_json_path = os.path.join(data_directory, "https://raw.githubusercontent.com/cristian-encalada/Alquivago/main/data/cambio.json")
+    url = "https://raw.githubusercontent.com/cristian-encalada/Alquivago/main/data/cambio.json"
 
-    with open(cambio_json_path, 'r') as file:
-        data = json.load(file)
+    try:
+        response = requests.get(url)
+        response.raise_for_status()  # Check if the request was successful
+
+        data = response.json()  # Parse the JSON response
         return data["rate"]
+    except requests.exceptions.RequestException as e:
+        raise RuntimeError(f"Error while making the HTTP request: {str(e)}")
+    except json.JSONDecodeError as e:
+        raise RuntimeError(f"Error while parsing JSON data: {str(e)}")
