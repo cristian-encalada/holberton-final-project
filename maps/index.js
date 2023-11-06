@@ -87,8 +87,8 @@ async function initMap() {
   // Request needed libraries.
   const { Map, InfoWindow } = await google.maps.importLibrary("maps");
   var map = new google.maps.Map(document.getElementById('map'), {
-    center: { lat: -34.8167, lng: -56.1833 }, // Montevideo - Zoom 12
-    zoom: 11
+    center: { lat: -34.86500, lng: -56.17861 }, // Montevideo - Zoom 12
+    zoom: 12
   });
 
   // Fetch the coordinates from 'mvd_coordinates' CSV file
@@ -160,7 +160,7 @@ async function addPolygon(map, coordinates, name, apiData, zoneNumber) {
     infoWindow.close();
   });
 
-  // Add click event listener
+  // Click event listener
   polygon.addListener('click', function() {
   const polygonCenter = bounds.getCenter();
   // Use the polygon's center coordinates for the clicked zone
@@ -179,21 +179,20 @@ let allRentsData; // Variable to store the fetched data
 async function fetchData() {
   const response = await fetch("https://alquivago-flask-apis.vercel.app/api/v1/rent/mapa/1");
   allRentsData = await response.json();
-  // initMap2(); // Call the initMap2 function after fetching the data
 }
 
 
 async function initMap2(centerCoordinates, zoneNumber) {
   // Request needed libraries.
   const { Map } = await google.maps.importLibrary("maps");
-  // Construct the API URL using the zoneNumber
+  // API URL using the zoneNumber
   const apiUrl = `https://alquivago-flask-apis.vercel.app/api/v1/rent/mapa/${zoneNumber}`;
   const response = await fetch(apiUrl);
   allRentsData = await response.json();
   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker"); // Import AdvancedMarkerElement
   const map = new Map(document.getElementById("map"), {
     center: centerCoordinates,
-    zoom: 16,
+    zoom: 14,
     mapId: "16aaecb986532f9a",
   });
 
@@ -226,7 +225,7 @@ async function initMap2(centerCoordinates, zoneNumber) {
 
   function createBlueCircleMarker(position) {
     // Create blue circle markers
-    const blueCircleSvgString = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="red" /></svg>';
+    const blueCircleSvgString = '<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="red" /></svg>';
     const blueCircleSvg = new DOMParser().parseFromString(blueCircleSvgString, "image/svg+xml").documentElement;
 
     const marker = new AdvancedMarkerElement({
@@ -290,7 +289,7 @@ async function initMap2(centerCoordinates, zoneNumber) {
     });
     markers.length = 0; // Clear the markers array
 
-    if (zoom >= 17) {
+    if (zoom >= 14) {
       if (allRentsData && allRentsData.rents) {
         allRentsData.rents.forEach((rent) => {
           if (rent.location && rent.location.latitude && rent.location.longitude) {
@@ -323,7 +322,7 @@ async function initMap2(centerCoordinates, zoneNumber) {
           }
         });
       }
-    } else if (zoom < 17) {
+    } else if (zoom < 14) {
       if (allRentsData && allRentsData.rents) {
         allRentsData.rents.forEach((rent) => {
           if (rent.location && rent.location.latitude && rent.location.longitude) {
