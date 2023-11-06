@@ -76,7 +76,7 @@ def cambio_call():
     """
     current_directory = os.path.dirname(os.path.abspath(__file__))
     data_directory = os.path.abspath(os.path.join(current_directory, "../../data"))
-    cambio_json_path = os.path.join(data_directory, "cambio.json")
+    cambio_json_path = os.path.join(data_directory, "https://raw.githubusercontent.com/cristian-encalada/Alquivago/main/data/cambio.json")
 
     with open(cambio_json_path, 'r') as file:
         data = json.load(file)
